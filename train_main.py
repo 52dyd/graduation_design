@@ -93,8 +93,6 @@ def train():
     episode_avg_halt_list = []
     learning_step = 0
     for i_episode in range(cfg.train_eps):
-        ########################################################################
-        #generate_rou_file(train_eps = i_episode + 1, path='rou_net')    #######第二次是不需要更新的
         generate_cfg_file(ep = i_episode + 1, path='rou_net')    #######
         cfg_file_name = 'rou_net/intersection' + str(i_episode + 1) + '.sumocfg'
         cfg_file = os.path.join(curr_path, cfg_file_name)

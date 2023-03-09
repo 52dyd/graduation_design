@@ -71,6 +71,5 @@ class Actor(nn.Module):
         x = self.ln0(x)
         x = F.relu(self.ln1(self.fc1(x)))
         x = F.relu(self.ln2(self.fc2(x)))
-        #至于actor网络最后一层为什么是tanh，论文是这样设置的,对动作的范围进行限制
         x = 2 * torch.tanh(self.fc3(x))
         return x

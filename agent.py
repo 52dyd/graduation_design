@@ -19,7 +19,7 @@ from collections import defaultdict
 
 from traffic import *
 
-WEIGHT_DECAY = 0    # L2 weight decay,论文的设置是0.01
+WEIGHT_DECAY = 0
 
 class OUNoise(object):
     '''Ornstein–Uhlenbeck
@@ -154,14 +154,14 @@ class DDPGAgent:
                 # 此时为红灯
                 # 若车辆以当前车速行驶，通过十字路口所需的时间小于交通灯由红变绿的时间,则车辆会停在十字路口
                 if current_speed * time_to_green > dist_to_intersec:   
-                    reward_tls = -2.5 #-1.2是个不错的值
+                    reward_tls = -2.5
                 else:
                     reward_tls = 0.5
             else:
                 # 此时为绿灯,这里的time_to_green实际是当前绿灯的剩余时长
                 # 如果车辆以当前速度行驶，未能在绿灯结束前通过十字路口，则获得惩罚
                 if current_speed * time_to_green < dist_to_intersec:
-                    reward_tls = -2.5 #从-1.8往后回退
+                    reward_tls = -2.5
                 else:
                     reward_tls = 0.5
             # #---------------------------前车与后车交互过程获得的奖励--------------------#           
