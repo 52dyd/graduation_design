@@ -49,7 +49,7 @@ class DDPGConfig:
         self.memory_capacity = 1000000
         self.batch_size = 512
 
-        self.train_eps = 100
+        self.train_eps = 50
         self.eval_eps = 10
         
         self.epsilon_start = 3
