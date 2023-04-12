@@ -119,3 +119,28 @@ def generate_rou_file(ep, simulation_steps = 3600, car_count_per_lane = 100, pat
             print('   <vehicle id="%s_%i" type="ego_car" route="%s" depart="%i" departSpeed="10" departLane="best"/>' % (depart_list[i][0], i + 1, depart_list[i][0], depart_list[i][1]), file = route)             
         print('</routes>', file=route)
 
+
+def generate_test_cfg_file(train_eps, path='test_rou_net'):
+    curr_path = os.path.dirname(os.path.abspath(__file__))
+    cfg_file_name = path+'/intersection' + str(train_eps) + '.sumocfg'
+    rou_file_name = path+'/intersection' + str(train_eps) + '.rou.xml'
+    net_file_name = path+'/intersection.net.xml'
+    cfg_file = os.path.join(curr_path, cfg_file_name)
+    rou_file = os.path.join(curr_path, rou_file_name)
+    net_file = os.path.join(curr_path, net_file_name)
+
+    with open(cfg_file, "w") as route:
+        #EV的能耗是Wh每秒 carFollowModel="IDM"
+        print("""<configuration>
+    <input>
+        <net-file value="{}"/>
+        <route-files value="{}"/>
+    </input>
+    <time>
+        <begin value="0"/>
+        <end value="3600"/>
+        <step-length value="1"/>
+    </time>
+    <tripinfo-output value="tripinfo.xml"/>
+</configuration>""".format(net_file, rou_file), file=route)
+

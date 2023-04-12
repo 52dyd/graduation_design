@@ -57,8 +57,8 @@ class DDPGConfig:
         self.intersection_lanes = [':intersection_0_0', ':intersection_1_0', ':intersection_2_0', ':intersection_3_0']
         self.yellow_duration = 4
         self.green_phase_duration = 30
-        #self.device = torch.device("cpu")
-        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        self.device = torch.device("cpu")
+        #self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
         self.simulation_steps = 3600
 
@@ -139,14 +139,16 @@ def eval():
     # torch.cuda.set_device(1)
     ####################################
 
-    dest_pth = 'models/reward_s0.05_a7e-2_t(-2_2)_safe(4,-1).pth'
+    #dest_pth = 'models/reward_s0.05_a7e-2_t(-2_2)_safe(4,-1).pth'
+    dest_pth = 'models/mofan2.pth'
     print('------------------------------------------')
     print(dest_pth)
     print('------------------------------------------')
 
     curr_actor_path = os.path.dirname(os.path.abspath(__file__))
     actor_file_path = os.path.join(curr_actor_path, dest_pth) #######
-    agent.actor.load_state_dict(torch.load(actor_file_path))
+    state_dict = torch.load(actor_file_path, map_location=torch.device('cpu'))
+    agent.actor.load_state_dict(state_dict)
 
     episode_avg_speed_list = []
     episode_avg_elec_list = []
