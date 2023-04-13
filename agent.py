@@ -147,23 +147,30 @@ class DDPGAgent:
             dist_to_intersec = next_state_dict[key][-3] # 当前车辆到十字路口的距离
             light_flag = next_state_dict[key][-2]       # 当前车辆行驶方向的车道是绿灯还是红灯
             time_to_green = next_state_dict[key][-1]    # 当前相位还有多少时间变绿/或者当前绿灯相位持续多少时间
+            leader_speed = next_state_dict[key][3]
+            safe_dist = get_safe_dist(current_speed, leader_speed)
             #-----------车辆行驶过程速度获得的奖励，速度太慢和太快都会获得惩罚----------#
-            reward_speed = current_speed / 20.
+            #if safe_dist >= 0:
+            #    reward_speed = current_speed
+            #else:
+            #reward_speed = current_speed * -10
+            reward_speed = 0
             #------------------------获取通过交通灯时得到的奖励-----------------------#
+            max_dist = 300.
             if light_flag == 0:
                 # 此时为红灯
                 # 若车辆以当前车速行驶，通过十字路口所需的时间小于交通灯由红变绿的时间,则车辆会停在十字路口
-                if current_speed * time_to_green > dist_to_intersec:   
-                    reward_tls = -2.5
+                if current_speed * time_to_green >= dist_to_intersec:   
+                    reward_tls = -2.5 * (current_speed * time_to_green - dist_to_intersec) / max_dist
                 else:
-                    reward_tls = 0.5
+                    reward_tls = (current_speed * time_to_green - dist_to_intersec) / max_dist + 30 ;
             else:
                 # 此时为绿灯,这里的time_to_green实际是当前绿灯的剩余时长
                 # 如果车辆以当前速度行驶，未能在绿灯结束前通过十字路口，则获得惩罚
                 if current_speed * time_to_green < dist_to_intersec:
-                    reward_tls = -2.5
+                    reward_tls = -2.5 * (dist_to_intersec - time_to_green * current_speed) / max_dist
                 else:
-                    reward_tls = 0.5
+                    reward_tls = (current_speed * time_to_green - dist_to_intersec) / max_dist
             # #---------------------------前车与后车交互过程获得的奖励--------------------#           
             # #--------------------------------------------------------------------------#
             total_reward = reward_speed + reward_tls

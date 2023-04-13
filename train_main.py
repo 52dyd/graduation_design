@@ -8,6 +8,7 @@ import traci
 import datetime
 import torch
 import random
+import contextlib
 import numpy as np
 
 from traffic import get_avg_speed
@@ -40,7 +41,7 @@ class DDPGConfig:
         self.algo = 'DDPG'
         self.env = 'SUMO' # env name
 
-        self.gamma = 0.99
+        self.gamma = 0.95
         self.epsilon = 0.001
 
         self.critic_lr = 5e-3
@@ -49,16 +50,16 @@ class DDPGConfig:
         self.memory_capacity = 1000000
         self.batch_size = 512
 
-        self.train_eps = 50
+        self.train_eps = 150
         self.eval_eps = 10
         
         self.epsilon_start = 3
 
-        self.max_speed = 20
+        self.max_speed = 40
 
         self.target_update = 4
         self.hidden_dim = 256
-        self.soft_tau = 0.005
+        self.soft_tau = 0.01
         self.max_action = 2
 
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -213,4 +214,5 @@ def train():
 
 if __name__ == "__main__":
     train()
+
     

@@ -170,8 +170,8 @@ def get_tls_info(veh_id):
                 return 0, time_to_green_ns, dist_to_intersec
             
 #得到当前二车的最小安全距离
-def get_safe_dist(current_speed, leader_speed, max_deceleration = 3, 
-                        min_gap = 1, time_react = 0.5, time_delay = 0.3, time_i = 0.1):
+def get_safe_dist(current_speed, leader_speed, max_deceleration = 10, 
+                        min_gap = 0.5, time_react = 0.1, time_delay = 0.1, time_i = 0.1):
     '''
     time_react:反应时间，因为是AV，所以在这里设置0.5
     time_delay:制动协调时间

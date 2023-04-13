@@ -1,7 +1,7 @@
 <configuration>
     <input>
-        <net-file value="/home/yuwz/graduation-design/sumo_workplace/DDPG/rou_net/intersection.net.xml"/>
-        <route-files value="/home/yuwz/graduation-design/sumo_workplace/DDPG/rou_net/intersection112.rou.xml"/>
+        <net-file value="/home/yuwz/tmp/graduation_design/rou_net/intersection.net.xml"/>
+        <route-files value="/home/yuwz/tmp/graduation_design/rou_net/intersection112.rou.xml"/>
     </input>
     <time>
         <begin value="0"/>
