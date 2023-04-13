@@ -57,8 +57,8 @@ class DDPGConfig:
         self.intersection_lanes = [':intersection_0_0', ':intersection_1_0', ':intersection_2_0', ':intersection_3_0']
         self.yellow_duration = 4
         self.green_phase_duration = 30
-        self.device = torch.device("cpu")
-        #self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        #self.device = torch.device("cpu")
+        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
         self.simulation_steps = 3600
 

@@ -1,0 +1,1223 @@
+Env:SUMO, Algorithm:DDPG, Device:cuda
+-----------------------------------------
+models/mofan2.pth
+-----------------------------------------
+ Retrying in 1 seconds
+Simulation......
+Episode:1/150, Reward:10.225182710940425
+Episode:1/150, speed Reward:0.0
+Episode:1/150, tls Reward:10.225182710940425
+Episode:1/150, avg speed:9.827297142762735 m/s
+Episode:1/150, hundred miles ec:14.673652797707376 kwh/100km
+Episode:1/150, avg jerk:0.5926247736276379 
+Episode:1/150, avg halt num:1.4733207784055242
+ Retrying in 1 seconds
+Simulation......
+Episode:2/150, Reward:10.598421184514153
+Episode:2/150, speed Reward:0.0
+Episode:2/150, tls Reward:10.598421184514153
+Episode:2/150, avg speed:9.350469205587567 m/s
+Episode:2/150, hundred miles ec:14.541972488042246 kwh/100km
+Episode:2/150, avg jerk:0.591801210690544 
+Episode:2/150, avg halt num:1.810948656919415
+ Retrying in 1 seconds
+Simulation......
+Episode:3/150, Reward:13.772045961539753
+Episode:3/150, speed Reward:0.0
+Episode:3/150, tls Reward:13.772045961539753
+Episode:3/150, avg speed:4.18956197848151 m/s
+Episode:3/150, hundred miles ec:14.729448378476462 kwh/100km
+Episode:3/150, avg jerk:9.603659533784104 
+Episode:3/150, avg halt num:1.7245710784313726
+ Retrying in 1 seconds
+Simulation......
+Episode:4/150, Reward:11.842005013375127
+Episode:4/150, speed Reward:0.0
+Episode:4/150, tls Reward:11.842005013375127
+Episode:4/150, avg speed:8.703713419578058 m/s
+Episode:4/150, hundred miles ec:15.377451954869256 kwh/100km
+Episode:4/150, avg jerk:4.312335043784713 
+Episode:4/150, avg halt num:0.9957115009746589
+ Retrying in 1 seconds
+Simulation......
+Episode:5/150, Reward:13.474476375824569
+Episode:5/150, speed Reward:0.0
+Episode:5/150, tls Reward:13.474476375824569
+Episode:5/150, avg speed:11.099155986574182 m/s
+Episode:5/150, hundred miles ec:16.05939760897875 kwh/100km
+Episode:5/150, avg jerk:3.7957103310997535 
+Episode:5/150Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+Warning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
+/home/yuwz/tmp/graduation_design/traffic.py:140: UserWarning: Call to deprecated function getCompleteRedYellowGreenDefinition, use getAllProgramLogics instead.
+  tls_phases = traci.trafficlight.getCompleteRedYellowGreenDefinition(tls_id)[0].phases
+0, tls Reward:14.237109221304346
+Episode:35/150, avg speed:12.41926508766935 m/s
+Episode:35/150, hundred miles ec:16.41881548542054 kwh/100km
+Episode:35/150, avg jerk:1.8411602904315918 
+Episode:35/150, avg halt num:0.7045377004435346
+ Retrying in 1 seconds
+Simulation......
+Episode:36/150, Reward:17.731084365412297
+Episode:36/150, speed Reward:0.0
+Episode:36/150, tls Reward:17.731084365412297
+Episode:36/150, avg speed:9.468875590930137 m/s
+Episode:36/150, hundred miles ec:14.880500309575247 kwh/100km
+Episode:36/150, avg jerk:2.4153303164254605 
+Episode:36/150, avg halt num:0.6584362139917695
+ Retrying in 1 seconds
+Simulation......
+Episode:37/150, Reward:17.256819722030524
+Episode:37/150, speed Reward:0.0
+Episode:37/150, tls Reward:17.256819722030524
+Episode:37/150, avg speed:12.039059824386241 m/s
+Episode:37/150, hundred miles ec:15.230882218080325 kwh/100km
+Episode:37/150, avg jerk:1.5086718337635636 
+Episode:37/150, avg halt num:0.05660377358490566
+ Retrying in 1 seconds
+Simulation......
+Episode:38/150, Reward:16.77262116021316
+Episode:38/150, speed Reward:0.0
+Episode:38/150, tls Reward:16.77262116021316
+Episode:38/150, avg speed:10.998031362638109 m/s
+Episode:38/150, hundred miles ec:15.33539834566586 kwh/100km
+Episode:38/150, avg jerk:1.9903098000553112 
+Episode:38/150, avg halt num:0.4852207293666027
+ Retrying in 1 seconds
+Simulation......
+Episode:39/150, Reward:16.334647994872768
+Episode:39/150, speed Reward:0.0
+Episode:39/150, tls Reward:16.334647994872768
+Episode:39/150, avg speed:9.180314610398998 m/s
+Episode:39/150, hundred miles ec:15.06484394723444 kwh/100km
+Episode:39/150, avg jerk:4.838155873293626 
+Episode:39/150, avg halt num:0.5162110616656072
+ Retrying in 1 seconds
+Simulation......
+Episode:40/150, Reward:14.16389403939847
+Episode:40/150, speed Reward:0.0
+Episode:40/150, tls Reward:14.16389403939847
+Episode:40/150, avg speed:3.835615803074782 m/s
+Episode:40/150, hundred miles ec:14.869242931117306 kwh/100km
+Episode:40/150, avg jerk:11.943894513801958 
+Episode:40/150, avg halt num:1.7519255455712452
+ Retrying in 1 seconds
+Simulation......
+Episode:41/150, Reward:13.44025252400968
+Episode:41/150, speed Reward:0.0
+Episode:41/150, tls Reward:13.44025252400968
+Episode:41/150, avg speed:10.299786511278242 m/s
+Episode:41/150, hundred miles ec:15.890006403956173 kwh/100km
+Episode:41/150, avg jerk:3.99304676673392 
+Episode:41/150, avg halt num:0.8818149841716497
+ Retrying in 1 seconds
+Simulation......
+Episode:42/150, Reward:14.95373690638086
+Episode:42/150, speed Reward:0.0
+Episode:42/150, tls Reward:14.95373690638086
+Episode:42/150, avg speed:8.827601449109403 m/s
+Episode:42/150, hundred miles ec:15.034283355293724 kwh/100km
+Episode:42/150, avg jerk:3.0120545543801756 
+Episode:42/150, avg halt num:0.594553706505295
+ Retrying in 1 seconds
+Simulation......
+Episode:43/150, Reward:14.57900438886999
+Episode:43/150, speed Reward:0.0
+Episode:43/150, tls Reward:14.57900438886999
+Episode:43/150, avg speed:3.9548115916149316 m/s
+Episode:43/150, hundred miles ec:14.871973087744335 kwh/100km
+Episode:43/150, avg jerk:11.34431194627096 
+Episode:43/150, avg halt num:2.0886648122392213
+ Retrying in 1 seconds
+Simulation......
+Episode:44/150, Reward:14.321927798449046
+Episode:44/150, speed Reward:0.0
+Episode:44/150, tls Reward:14.321927798449046
+Episode:44/150, avg speed:3.7999072045662934 m/s
+Episode:44/150, hundred miles ec:14.838859830140215 kwh/100km
+Episode:44/150, avg jerk:11.692401607817608 
+Episode:44/150, avg halt num:1.9196428571428572
+ Retrying in 1 seconds
+Simulation......
+Episode:45/150, Reward:14.006999697603112
+Episode:45/150, speed Reward:0.0
+Episode:45/150, tls Reward:14.006999697603112
+Episode:45/150, avg speed:11.368830243147604 m/s
+Episode:45/150, hundred miles ec:16.30210726747806 kwh/100km
+Episode:45/150, avg jerk:1.8790292413768737 
+Episode:45/150, avg halt num:0.7447037701974866
+ Retrying in 1 seconds
+Simulation......
+Episode:46/150, Reward:15.918552673506287
+Episode:46/150, speed Reward:0.0
+Episode:46/150, tls Reward:15.918552673506287
+Episode:46/150, avg speed:10.406487709293451 m/s
+Episode:46/150, hundred miles ec:15.348611099828677 kwh/100km
+Episode:46/150, avg jerk:2.317025984756037 
+Episode:46/150, avg halt num:0.37873545139981124
+ Retrying in 1 seconds
+Simulation......
+Episode:47/150, Reward:15.611950401225638
+Episode:47/150, speed Reward:0.0
+Episode:47/150, tls Reward:15.611950401225638
+Episode:47/150, avg speed:10.12319736116989 m/s
+Episode:47/150, hundred miles ec:15.213081625672343 kwh/100km
+Episode:47/150, avg jerk:2.079635907898464 
+Episode:47/150, avg halt num:0.6370229007633588
+ Retrying in 1 seconds
+Simulation......
+Episode:48/150, Reward:16.373632205882178
+Episode:48/150, speed Reward:0.0
+Episode:48/150, tls Reward:16.373632205882178
+Episode:48/150, avg speed:11.382968365538334 m/s
+Episode:48/150, hundred miles ec:15.496258706532798 kwh/100km
+Episode:48/150, avg jerk:2.2574243162139918 
+Episode:48/150, avg halt num:0.47414702778754836
+ Retrying in 1 seconds
+Simulation......
+Episode:49/150, Reward:14.141418880944153
+Episode:49/150, speed Reward:0.0
+Episode:49/150, tls Reward:14.141418880944153
+Episode:49/150, avg speed:6.25718016540791 m/s
+Episode:49/150, hundred miles ec:15.00619711031464 kwh/100km
+Episode:49/150, avg jerk:5.203830714333017 
+Episode:49/150, avg halt num:1.4948604992657857
+ Retrying in 1 seconds
+Simulation......
+Episode:50/150, Reward:15.622484355009538
+Episode:50/150, speed Reward:0.0
+Episode:50/150, tls Reward:15.622484355009538
+Episode:50/150, avg speed:11.343112114892937 m/s
+Episode:50/150, hundred miles ec:15.867000424162601 kwh/100km
+Episode:50/150, avg jerk:2.476368230024603 
+Episode:50/150, avg halt num:0.3364398881640261
+ Retrying in 1 seconds
+Simulation......
+Episode:51/150, Reward:13.725963248021612
+Episode:51/150, speed Reward:0.0
+Episode:51/150, tls Reward:13.725963248021612
+Episode:51/150, avg speed:5.939851427765012 m/s
+Episode:51/150, hundred miles ec:14.945665246283454 kwh/100km
+Episode:51/150, avg jerk:6.779591975765397 
+Episode:51/150, avg halt num:1.5212514757969304
+ Retrying in 1 seconds
+Simulation......
+Episode:52/150, Reward:15.581681684694164
+Episode:52/150, speed Reward:0.0
+Episode:52/150, tls Reward:15.581681684694164
+Episode:52/150, avg speed:8.055817111934742 m/s
+Episode:52/150, hundred miles ec:15.084589046270365 kwh/100km
+Episode:52/150, avg jerk:2.457637265190748 
+Episode:52/150, avg halt num:1.8111814345991561
+ Retrying in 1 seconds
+Simulation......
+Episode:53/150, Reward:13.788928788882945
+Episode:53/150, speed Reward:0.0
+Episode:53/150, tls Reward:13.788928788882945
+Episode:53/150, avg speed:5.7540219916659865 m/s
+Episode:53/150, hundred miles ec:14.733557395082265 kwh/100km
+Episode:53/150, avg jerk:6.251766905813692 
+Episode:53/150, avg halt num:1.4966599866399466
+ Retrying in 1 seconds
+Simulation......
+Episode:54/150, Reward:15.43388825350669
+Episode:54/150, speed Reward:0.0
+Episode:54/150, tls Reward:15.43388825350669
+Episode:54/150, avg speed:6.767056727898101 m/s
+Episode:54/150, hundred miles ec:14.90862030873322 kwh/100km
+Episode:54/150, avg jerk:6.139880123034764 
+Episode:54/150, avg halt num:1.1462868117797695
+ Retrying in 1 seconds
+Simulation......
+Episode:55/150, Reward:15.45491231267233
+Episode:55/150, speed Reward:0.0
+Episode:55/150, tls Reward:15.45491231267233
+Episode:55/150, avg speed:7.692451582796877 m/s
+Episode:55/150, hundred miles ec:14.98958192047621 kwh/100km
+Episode:55/150, avg jerk:4.478574318771526 
+Episode:55/150, avg halt num:1.487912087912088
+ Retrying in 1 seconds
+Simulation......
+Episode:56/150, Reward:16.443912234882593
+Episode:56/150, speed Reward:0.0
+Episode:56/150, tls Reward:16.443912234882593
+Episode:56/150, avg speed:9.399342645188742 m/s
+Episode:56/150, hundred miles ec:15.171917358061846 kwh/100km
+Episode:56/150, avg jerk:2.192838056706979 
+Episode:56/150, avg halt num:0.9041545189504373
+ Retrying in 1 seconds
+Simulation......
+Episode:57/150, Reward:18.701663169832262
+Episode:57/150, speed Reward:0.0
+Episode:57/150, tls Reward:18.701663169832262
+Episode:57/150, avg speed:12.434226604676187 m/s
+Episode:57/150, hundred miles ec:15.444789305649984 kwh/100km
+Episode:57/150, avg jerk:1.562544775631032 
+Episode:57/150, avg halt num:0.048820852296235
+ Retrying in 1 seconds
+Simulation......
+Episode:58/150, Reward:16.292592314222
+Episode:58/150, speed Reward:0.0
+Episode:58/150, tls Reward:16.292592314222
+Episode:58/150, avg speed:10.802325189223161 m/s
+Episode:58/150, hundred miles ec:15.386836632032079 kwh/100km
+Episode:58/150, avg jerk:2.2708305481148683 
+Episode:58/150, avg halt num:0.7258127692910301
+ Retrying in 1 seconds
+Simulation......
+Episode:59/150, Reward:17.771906288233833
+Episode:59/150, speed Reward:0.0
+Episode:59/150, tls Reward:17.771906288233833
+Episode:59/150, avg speed:13.119618810921217 m/s
+Episode:59/150, hundred miles ec:15.684522174008572 kwh/100km
+Episode:59/150, avg jerk:1.5229833615865886 
+Episode:59/150, avg halt num:0.061095782420181315
+ Retrying in 1 seconds
+Simulation......
+Episode:60/150, Reward:18.606093508495075
+Episode:60/150, speed Reward:0.0
+Episode:60/150, tls Reward:18.606093508495075
+Episode:60/150, avg speed:13.736000840249487 m/s
+Episode:60/150, hundred miles ec:16.077997624235216 kwh/100km
+Episode:60/150, avg jerk:1.095865984662693 
+Episode:60/150, avg halt num:0.07118412046543464
+ Retrying in 1 seconds
+Simulation......
+Episode:61/150, Reward:15.287040753530995
+Episode:61/150, speed Reward:0.0
+Episode:61/150, tls Reward:15.287040753530995
+Episode:61/150, avg speed:7.3257667751132685 m/s
+Episode:61/150, hundred miles ec:15.126074023206057 kwh/100km
+Episode:61/150, avg jerk:6.949771568819184 
+Episode:61/150, avg halt num:1.3129395218002813
+ Retrying in 1 seconds
+Simulation......
+Episode:62/150, Reward:14.767258463454736
+Episode:62/150, speed Reward:0.0
+Episode:62/150, tls Reward:14.767258463454736
+Episode:62/150, avg speed:6.080688834107119 m/s
+Episode:62/150, hundred miles ec:15.047350158343798 kwh/100km
+Episode:62/150, avg jerk:8.16091532353851 
+Episode:62/150, avg halt num:1.2529394030750678
+ Retrying in 1 seconds
+Simulation......
+Episode:63/150, Reward:14.08195513906248
+Episode:63/150, speed Reward:0.0
+Episode:63/150, tls Reward:14.08195513906248
+Episode:63/150, avg speed:3.79226771618739 m/s
+Episode:63/150, hundred miles ec:14.842720356652988 kwh/100km
+Episode:63/150, avg jerk:11.810759830653074 
+Episode:63/150, avg halt num:1.5898416166029492
+ Retrying in 1 seconds
+Simulation......
+Episode:64/150, Reward:14.332591279578688
+Episode:64/150, speed Reward:0.0
+Episode:64/150, tls Reward:14.332591279578688
+Episode:64/150, avg speed:6.81655404884041 m/s
+Episode:64/150, hundred miles ec:15.402831440288788 kwh/100km
+Episode:64/150, avg jerk:6.943233815014731 
+Episode:64/150, avg halt num:1.740819209039548
+ Retrying in 1 seconds
+Simulation......
+Episode:65/150, Reward:14.747851381374222
+Episode:65/150, speed Reward:0.0
+Episode:65/150, tls Reward:14.747851381374222
+Episode:65/150, avg speed:7.032558746616828 m/s
+Episode:65/150, hundred miles ec:15.011234627413124 kwh/100km
+Episode:65/150, avg jerk:3.080890355576977 
+Episode:65/150, avg halt num:1.9162198391420913
+ Retrying in 1 seconds
+Simulation......
+Episode:66/150, Reward:14.474302173805508
+Episode:66/150, speed Reward:0.0
+Episode:66/150, tls Reward:14.474302173805508
+Episode:66/150, avg speed:5.836309481256619 m/s
+Episode:66/150, hundred miles ec:14.687097167425216 kwh/100km
+Episode:66/150, avg jerk:5.701065953030777 
+Episode:66/150, avg halt num:1.2638261851015802
+ Retrying in 1 seconds
+Simulation......
+Episode:67/150, Reward:13.911559872734923
+Episode:67/150, speed Reward:0.0
+Episode:67/150, tls Reward:13.911559872734923
+Episode:67/150, avg speed:4.35057913915048 m/s
+Episode:67/150, hundred miles ec:14.910706112051347 kwh/100km
+Episode:67/150, avg jerk:10.560477442459256 
+Episode:67/150, avg halt num:1.6257364341085272
+ Retrying in 1 seconds
+Simulation......
+Episode:68/150, Reward:15.009346731713723
+Episode:68/150, speed Reward:0.0
+Episode:68/150, tls Reward:15.009346731713723
+Episode:68/150, avg speed:8.94590812414495 m/s
+Episode:68/150, hundred miles ec:15.456531007014304 kwh/100km
+Episode:68/150, avg jerk:3.0759859938459444 
+Episode:68/150, avg halt num:0.9229539641943734
+ Retrying in 1 seconds
+Simulation......
+Episode:69/150, Reward:14.934127304889268
+Episode:69/150, speed Reward:0.0
+Episode:69/150, tls Reward:14.934127304889268
+Episode:69/150, avg speed:7.039576172799125 m/s
+Episode:69/150, hundred miles ec:15.119950393097731 kwh/100km
+Episode:69/150, avg jerk:4.978913042852431 
+Episode:69/150, avg halt num:1.1572481572481572
+ Retrying in 1 seconds
+Simulation......
+Episode:70/150, Reward:15.314924964767162
+Episode:70/150, speed Reward:0.0
+Episode:70/150, tls Reward:15.314924964767162
+Episode:70/150, avg speed:7.984594325283661 m/s
+Episode:70/150, hundred miles ec:15.239285469062493 kwh/100km
+Episode:70/150, avg jerk:3.5463919743540333 
+Episode:70/150, avg halt num:1.1526861451460886
+ Retrying in 1 seconds
+Simulation......
+Episode:71/150, Reward:14.90375477826323
+Episode:71/150, speed Reward:0.0
+Episode:71/150, tls Reward:14.90375477826323
+Episode:71/150, avg speed:9.275367534751135 m/s
+Episode:71/150, hundred miles ec:15.328147184772568 kwh/100km
+Episode:71/150, avg jerk:2.905407771251155 
+Episode:71/150, avg halt num:0.8361635220125786
+ Retrying in 1 seconds
+Simulation......
+Episode:72/150, Reward:16.368706021298216
+Episode:72/150, speed Reward:0.0
+Episode:72/150, tls Reward:16.368706021298216
+Episode:72/150, avg speed:10.543667247588603 m/s
+Episode:72/150, hundred miles ec:15.490629466738078 kwh/100km
+Episode:72/150, avg jerk:2.671553208861285 
+Episode:72/150, avg halt num:0.38399720475192173
+ Retrying in 1 seconds
+Simulation......
+Episode:73/150, Reward:15.166737338264534
+Episode:73/150, speed Reward:0.0
+Episode:73/150, tls Reward:15.166737338264534
+Episode:73/150, avg speed:10.300174161246405 m/s
+Episode:73/150, hundred miles ec:15.683308078804243 kwh/100km
+Episode:73/150, avg jerk:2.801432199633414 
+Episode:73/150, avg halt num:0.5245202558635395
+ Retrying in 1 seconds
+Simulation......
+Episode:74/150, Reward:15.979407961041511
+Episode:74/150, speed Reward:0.0
+Episode:74/150, tls Reward:15.979407961041511
+Episode:74/150, avg speed:11.74815478248106 m/s
+Episode:74/150, hundred miles ec:15.776605051208584 kwh/100km
+Episode:74/150, avg jerk:2.076353177663108 
+Episode:74/150, avg halt num:0.5532458059810358
+ Retrying in 1 seconds
+Simulation......
+Episode:75/150, Reward:17.05341545932882
+Episode:75/150, speed Reward:0.0
+Episode:75/150, tls Reward:17.05341545932882
+Episode:75/150, avg speed:11.568061266573691 m/s
+Episode:75/150, hundred miles ec:15.57537091204419 kwh/100km
+Episode:75/150, avg jerk:2.0619481319437707 
+Episode:75/150, avg halt num:0.36516476126429054
+ Retrying in 1 seconds
+Simulation......
+Episode:76/150, Reward:13.989096704862012
+Episode:76/150, speed Reward:0.0
+Episode:76/150, tls Reward:13.989096704862012
+Episode:76/150, avg speed:6.91238848940628 m/s
+Episode:76/150, hundred miles ec:14.843704180275061 kwh/100km
+Episode:76/150, avg jerk:5.60783813030196 
+Episode:76/150, avg halt num:1.6440677966101696
+ Retrying in 1 seconds
+Simulation......
+Episode:77/150, Reward:13.765621285900423
+Episode:77/150, speed Reward:0.0
+Episode:77/150, tls Reward:13.765621285900423
+Episode:77/150, avg speed:6.80120504637822 m/s
+Episode:77/150, hundred miles ec:15.048061512316375 kwh/100km
+Episode:77/150, avg jerk:3.8338421103063958 
+Episode:77/150, avg halt num:2.043544112078758
+ Retrying in 1 seconds
+Simulation......
+Episode:78/150, Reward:15.763236216282635
+Episode:78/150, speed Reward:0.0
+Episode:78/150, tls Reward:15.763236216282635
+Episode:78/150, avg speed:9.029787856270696 m/s
+Episode:78/150, hundred miles ec:15.230854674086004 kwh/100km
+Episode:78/150, avg jerk:2.472308030166405 
+Episode:78/150, avg halt num:1.1982484076433122
+ Retrying in 1 seconds
+Simulation......
+Episode:79/150, Reward:16.099372683054394
+Episode:79/150, speed Reward:0.0
+Episode:79/150, tls Reward:16.099372683054394
+Episode:79/150, avg speed:10.754227968153423 m/s
+Episode:79/150, hundred miles ec:15.178395301074682 kwh/100km
+Episode:79/150, avg jerk:2.278578458109524 
+Episode:79/150, avg halt num:0.30507272082298686
+ Retrying in 1 seconds
+Simulation......
+Episode:80/150, Reward:16.581207738432465
+Episode:80/150, speed Reward:0.0
+Episode:80/150, tls Reward:16.581207738432465
+Episode:80/150, avg speed:11.420618466247983 m/s
+Episode:80/150, hundred miles ec:15.650484541562783 kwh/100km
+Episode:80/150, avg jerk:2.1255724913632914 
+Episode:80/150, avg halt num:0.4103612815269257
+ Retrying in 1 seconds
+Simulation......
+Episode:81/150, Reward:18.51172082292643
+Episode:81/150, speed Reward:0.0
+Episode:81/150, tls Reward:18.51172082292643
+Episode:81/150, avg speed:13.13173227472152 m/s
+Episode:81/150, hundred miles ec:15.75897532627918 kwh/100km
+Episode:81/150, avg jerk:1.383374741948632 
+Episode:81/150, avg halt num:0.06933629959213941
+ Retrying in 1 seconds
+Simulation......
+Episode:82/150, Reward:14.717519724968902
+Episode:82/150, speed Reward:0.0
+Episode:82/150, tls Reward:14.717519724968902
+Episode:82/150, avg speed:7.697070010277531 m/s
+Episode:82/150, hundred miles ec:15.183719926301373 kwh/100km
+Episode:82/150, avg jerk:5.391266923206581 
+Episode:82/150, avg halt num:1.2462977396726422
+ Retrying in 1 seconds
+Simulation......
+Episode:83/150, Reward:13.93727548966137
+Episode:83/150, speed Reward:0.0
+Episode:83/150, tls Reward:13.93727548966137
+Episode:83/150, avg speed:4.333306531233899 m/s
+Episode:83/150, hundred miles ec:14.795961462423207 kwh/100km
+Episode:83/150, avg jerk:10.371113050248061 
+Episode:83/150, avg halt num:1.474920634920635
+ Retrying in 1 seconds
+Simulation......
+Episode:84/150, Reward:18.51047453894225
+Episode:84/150, speed Reward:0.0
+Episode:84/150, tls Reward:18.51047453894225
+Episode:84/150, avg speed:11.968160713487373 m/s
+Episode:84/150, hundred miles ec:15.537247924557716 kwh/100km
+Episode:84/150, avg jerk:1.7243938663944587 
+Episode:84/150, avg halt num:0.2527955271565495
+ Retrying in 1 seconds
+Simulation......
+Episode:85/150, Reward:16.431494534717473
+Episode:85/150, speed Reward:0.0
+Episode:85/150, tls Reward:16.431494534717473
+Episode:85/150, avg speed:8.336655493678997 m/s
+Episode:85/150, hundred miles ec:14.947699969066853 kwh/100km
+Episode:85/150, avg jerk:3.1961940884371325 
+Episode:85/150, avg halt num:0.9474570562478949
+ Retrying in 1 seconds
+Simulation......
+Episode:86/150, Reward:14.991743097393092
+Episode:86/150, speed Reward:0.0
+Episode:86/150, tls Reward:14.991743097393092
+Episode:86/150, avg speed:10.491604776586572 m/s
+Episode:86/150, hundred miles ec:15.514376753915364 kwh/100km
+Episode:86/150, avg jerk:2.7292096527020577 
+Episode:86/150, avg halt num:0.5052115266707541
+ Retrying in 1 seconds
+Simulation......
+Episode:87/150, Reward:16.22616428392636
+Episode:87/150, speed Reward:0.0
+Episode:87/150, tls Reward:16.22616428392636
+Episode:87/150, avg speed:9.586852085790817 m/s
+Episode:87/150, hundred miles ec:15.162377855826913 kwh/100km
+Episode:87/150, avg jerk:2.1280414480759564 
+Episode:87/150, avg halt num:0.7668329177057357
+ Retrying in 1 seconds
+Simulation......
+Episode:88/150, Reward:14.884452205072092
+Episode:88/150, speed Reward:0.0
+Episode:88/150, tls Reward:14.884452205072092
+Episode:88/150, avg speed:6.171072747510237 m/s
+Episode:88/150, hundred miles ec:14.727187573270426 kwh/100km
+Episode:88/150, avg jerk:5.561761977736346 
+Episode:88/150, avg halt num:1.3104273504273505
+ Retrying in 1 seconds
+Simulation......
+Episode:89/150, Reward:14.043592192042182
+Episode:89/150, speed Reward:0.0
+Episode:89/150, tls Reward:14.043592192042182
+Episode:89/150, avg speed:6.556556256584629 m/s
+Episode:89/150, hundred miles ec:14.949408671729433 kwh/100km
+Episode:89/150, avg jerk:4.95141844098412 
+Episode:89/150, avg halt num:1.615413964135826
+ Retrying in 1 seconds
+Simulation......
+Episode:90/150, Reward:16.97447964174642
+Episode:90/150, speed Reward:0.0
+Episode:90/150, tls Reward:16.97447964174642
+Episode:90/150, avg speed:11.8726741094073 m/s
+Episode:90/150, hundred miles ec:15.988311183020153 kwh/100km
+Episode:90/150, avg jerk:1.9978251429023572 
+Episode:90/150, avg halt num:0.48104265402843605
+ Retrying in 1 seconds
+Simulation......
+Episode:91/150, Reward:17.067079424571503
+Episode:91/150, speed Reward:0.0
+Episode:91/150, tls Reward:17.067079424571503
+Episode:91/150, avg speed:12.53435780949937 m/s
+Episode:91/150, hundred miles ec:16.223239236676175 kwh/100km
+Episode:91/150, avg jerk:1.6907483084365151 
+Episode:91/150, avg halt num:0.16860232278734483
+ Retrying in 1 seconds
+Simulation......
+Episode:92/150, Reward:17.64318110785289
+Episode:92/150, speed Reward:0.0
+Episode:92/150, tls Reward:17.64318110785289
+Episode:92/150, avg speed:13.051827934783262 m/s
+Episode:92/150, hundred miles ec:16.27111193626967 kwh/100km
+Episode:92/150, avg jerk:1.289847738215027 
+Episode:92/150, avg halt num:0.30672579453067256
+ Retrying in 1 seconds
+Simulation......
+Episode:93/150, Reward:14.36311557745123
+Episode:93/150, speed Reward:0.0
+Episode:93/150, tls Reward:14.36311557745123
+Episode:93/150, avg speed:6.627608172007667 m/s
+Episode:93/150, hundred miles ec:15.176364003023767 kwh/100km
+Episode:93/150, avg jerk:3.926312410908852 
+Episode:93/150, avg halt num:1.9823100936524454
+ Retrying in 1 seconds
+Simulation......
+Episode:94/150, Reward:15.151301721379806
+Episode:94/150, speed Reward:0.0
+Episode:94/150, tls Reward:15.151301721379806
+Episode:94/150, avg speed:10.196355048138846 m/s
+Episode:94/150, hundred miles ec:15.73149423864983 kwh/100km
+Episode:94/150, avg jerk:3.034413398825971 
+Episode:94/150, avg halt num:0.4025931928687196
+ Retrying in 1 seconds
+Simulation......
+Episode:95/150, Reward:17.166832681482603
+Episode:95/150, speed Reward:0.0
+Episode:95/150, tls Reward:17.166832681482603
+Episode:95/150, avg speed:13.688961664971966 m/s
+Episode:95/150, hundred miles ec:16.204606206599493 kwh/100km
+Episode:95/150, avg jerk:1.1449520718461605 
+Episode:95/150, avg halt num:0.08139075464243382
+ Retrying in 1 seconds
+Simulation......
+Episode:96/150, Reward:17.407576985813055
+Episode:96/150, speed Reward:0.0
+Episode:96/150, tls Reward:17.407576985813055
+Episode:96/150, avg speed:13.98040197697339 m/s
+Episode:96/150, hundred miles ec:16.176696356880253 kwh/100km
+Episode:96/150, avg jerk:0.9172089094415443 
+Episode:96/150, avg halt num:0.18857589984350548
+ Retrying in 1 seconds
+Simulation......
+Episode:97/150, Reward:14.35410719327557
+Episode:97/150, speed Reward:0.0
+Episode:97/150, tls Reward:14.35410719327557
+Episode:97/150, avg speed:9.76484383540219 m/s
+Episode:97/150, hundred miles ec:15.526230708331614 kwh/100km
+Episode:97/150, avg jerk:2.620265785688423 
+Episode:97/150, avg halt num:1.0685645549318363
+ Retrying in 1 seconds
+Simulation......
+Episode:98/150, Reward:17.866181788098668
+Episode:98/150, speed Reward:0.0
+Episode:98/150, tls Reward:17.866181788098668
+Episode:98/150, avg speed:13.666090687323788 m/s
+Episode:98/150, hundred miles ec:16.163774093158732 kwh/100km
+Episode:98/150, avg jerk:1.2451548667239212 
+Episode:98/150, avg halt num:0.14904744116548374
+ Retrying in 1 seconds
+Simulation......
+Episode:99/150, Reward:14.998789695611693
+Episode:99/150, speed Reward:0.0
+Episode:99/150, tls Reward:14.998789695611693
+Episode:99/150, avg speed:8.825513180445956 m/s
+Episode:99/150, hundred miles ec:14.952212084160065 kwh/100km
+Episode:99/150, avg jerk:2.8690799241997285 
+Episode:99/150, avg halt num:0.7347140039447732
+ Retrying in 1 seconds
+Simulation......
+Episode:100/150, Reward:14.25428875712996
+Episode:100/150, speed Reward:0.0
+Episode:100/150, tls Reward:14.25428875712996
+Episode:100/150, avg speed:8.75764751377136 m/s
+Episode:100/150, hundred miles ec:15.409318128268811 kwh/100km
+Episode:100/150, avg jerk:3.7205201957964675 
+Episode:100/150, avg halt num:0.7954405422057917
+ Retrying in 1 seconds
+Simulation......
+Episode:101/150, Reward:13.66393219667655
+Episode:101/150, speed Reward:0.0
+Episode:101/150, tls Reward:13.66393219667655
+Episode:101/150, avg speed:13.348656059442213 m/s
+Episode:101/150, hundred miles ec:16.72928544644355 kwh/100km
+Episode:101/150, avg jerk:0.9842297642439973 
+Episode:101/150, avg halt num:0.4996635262449529
+ Retrying in 1 seconds
+Simulation......
+Episode:102/150, Reward:15.96772604814112
+Episode:102/150, speed Reward:0.0
+Episode:102/150, tls Reward:15.96772604814112
+Episode:102/150, avg speed:12.680484772628251 m/s
+Episode:102/150, hundred miles ec:15.895146271114593 kwh/100km
+Episode:102/150, avg jerk:1.207172011480758 
+Episode:102/150, avg halt num:0.4619718309859155
+ Retrying in 1 seconds
+Simulation......
+Episode:103/150, Reward:17.33078309515806
+Episode:103/150, speed Reward:0.0
+Episode:103/150, tls Reward:17.33078309515806
+Episode:103/150, avg speed:11.94709532906028 m/s
+Episode:103/150, hundred miles ec:15.671709026122892 kwh/100km
+Episode:103/150, avg jerk:2.147197600396243 
+Episode:103/150, avg halt num:0.27808988764044945
+ Retrying in 1 seconds
+Simulation......
+Episode:104/150, Reward:17.079326493318266
+Episode:104/150, speed Reward:0.0
+Episode:104/150, tls Reward:17.079326493318266
+Episode:104/150, avg speed:13.531502363412487 m/s
+Episode:104/150, hundred miles ec:15.998485885452304 kwh/100km
+Episode:104/150, avg jerk:1.1426056878564004 
+Episode:104/150, avg halt num:0.20459846717760746
+ Retrying in 1 seconds
+Simulation......
+Episode:105/150, Reward:14.81235595676036
+Episode:105/150, speed Reward:0.0
+Episode:105/150, tls Reward:14.81235595676036
+Episode:105/150, avg speed:6.871658090287984 m/s
+Episode:105/150, hundred miles ec:15.00560072136905 kwh/100km
+Episode:105/150, avg jerk:3.7348840545402258 
+Episode:105/150, avg halt num:1.7536496350364963
+ Retrying in 1 seconds
+Simulation......
+Episode:106/150, Reward:17.84626411045088
+Episode:106/150, speed Reward:0.0
+Episode:106/150, tls Reward:17.84626411045088
+Episode:106/150, avg speed:11.518387688908295 m/s
+Episode:106/150, hundred miles ec:15.588799277495495 kwh/100km
+Episode:106/150, avg jerk:2.1568848261144615 
+Episode:106/150, avg halt num:0.15177304964539007
+ Retrying in 1 seconds
+Simulation......
+Episode:107/150, Reward:16.51123586637487
+Episode:107/150, speed Reward:0.0
+Episode:107/150, tls Reward:16.51123586637487
+Episode:107/150, avg speed:12.467068606407697 m/s
+Episode:107/150, hundred miles ec:15.769057679287542 kwh/100km
+Episode:107/150, avg jerk:2.180867347582244 
+Episode:107/150, avg halt num:0.4144689950106914
+ Retrying in 1 seconds
+Simulation......
+Episode:108/150, Reward:16.510136974984178
+Episode:108/150, speed Reward:0.0
+Episode:108/150, tls Reward:16.510136974984178
+Episode:108/150, avg speed:10.202448610003165 m/s
+Episode:108/150, hundred miles ec:15.562297015335439 kwh/100km
+Episode:108/150, avg jerk:2.0951596785737814 
+Episode:108/150, avg halt num:0.8397594623275557
+ Retrying in 1 seconds
+Simulation......
+Episode:109/150, Reward:17.24080504378214
+Episode:109/150, speed Reward:0.0
+Episode:109/150, tls Reward:17.24080504378214
+Episode:109/150, avg speed:12.419718123646982 m/s
+Episode:109/150, hundred miles ec:15.773926626932775 kwh/100km
+Episode:109/150, avg jerk:2.6055307138054036 
+Episode:109/150, avg halt num:0.3378191856452726
+ Retrying in 1 seconds
+Simulation......
+Episode:110/150, Reward:14.34255394518027
+Episode:110/150, speed Reward:0.0
+Episode:110/150, tls Reward:14.34255394518027
+Episode:110/150, avg speed:4.630950192233275 m/s
+Episode:110/150, hundred miles ec:14.727191649422227 kwh/100km
+Episode:110/150, avg jerk:7.111710338806505 
+Episode:110/150, avg halt num:2.0196196800482946
+ Retrying in 1 seconds
+Simulation......
+Episode:111/150, Reward:17.55605246384599
+Episode:111/150, speed Reward:0.0
+Episode:111/150, tls Reward:17.55605246384599
+Episode:111/150, avg speed:12.000537744610178 m/s
+Episode:111/150, hundred miles ec:15.58223984044934 kwh/100km
+Episode:111/150, avg jerk:1.4989521989579844 
+Episode:111/150, avg halt num:0.3511450381679389
+ Retrying in 1 seconds
+Simulation......
+Episode:112/150, Reward:17.893765855110647
+Episode:112/150, speed Reward:0.0
+Episode:112/150, tls Reward:17.893765855110647
+Episode:112/150, avg speed:12.964455313333897 m/s
+Episode:112/150, hundred miles ec:15.738836624976921 kwh/100km
+Episode:112/150, avg jerk:1.5067774881348763 
+Episode:112/150, avg halt num:0.17765495459928937
+ Retrying in 1 seconds
+Simulation......
+Episode:113/150, Reward:18.016155012916972
+Episode:113/150, speed Reward:0.0
+Episode:113/150, tls Reward:18.016155012916972
+Episode:113/150, avg speed:13.234488359537487 m/s
+Episode:113/150, hundred miles ec:15.795060610270944 kwh/100km
+Episode:113/150, avg jerk:1.4777006191392372 
+Episode:113/150, avg halt num:0.19571984435797665
+ Retrying in 1 seconds
+Simulation......
+Episode:114/150, Reward:15.41882266300267
+Episode:114/150, speed Reward:0.0
+Episode:114/150, tls Reward:15.41882266300267
+Episode:114/150, avg speed:10.246209158955827 m/s
+Episode:114/150, hundred miles ec:15.674052454159657 kwh/100km
+Episode:114/150, avg jerk:2.7269618374143465 
+Episode:114/150, avg halt num:0.8264434574649812
+ Retrying in 1 seconds
+Simulation......
+Episode:115/150, Reward:17.004212600356507
+Episode:115/150, speed Reward:0.0
+Episode:115/150, tls Reward:17.004212600356507
+Episode:115/150, avg speed:12.500230320957913 m/s
+Episode:115/150, hundred miles ec:15.916696161994885 kwh/100km
+Episode:115/150, avg jerk:1.7946330854780606 
+Episode:115/150, avg halt num:0.3048128342245989
+ Retrying in 1 seconds
+Simulation......
+Episode:116/150, Reward:18.269837074065283
+Episode:116/150, speed Reward:0.0
+Episode:116/150, tls Reward:18.269837074065283
+Episode:116/150, avg speed:11.315720717902641 m/s
+Episode:116/150, hundred miles ec:15.34833333587205 kwh/100km
+Episode:116/150, avg jerk:2.2119968641289875 
+Episode:116/150, avg halt num:0.19768664563617244
+ Retrying in 1 seconds
+Simulation......
+Episode:117/150, Reward:14.543949456278398
+Episode:117/150, speed Reward:0.0
+Episode:117/150, tls Reward:14.543949456278398
+Episode:117/150, avg speed:7.066013648269779 m/s
+Episode:117/150, hundred miles ec:15.071918599327134 kwh/100km
+Episode:117/150, avg jerk:4.594120283627439 
+Episode:117/150, avg halt num:1.057271780631725
+ Retrying in 1 seconds
+Simulation......
+Episode:118/150, Reward:15.149035576548682
+Episode:118/150, speed Reward:0.0
+Episode:118/150, tls Reward:15.149035576548682
+Episode:118/150, avg speed:7.681805612604631 m/s
+Episode:118/150, hundred miles ec:14.951024821222214 kwh/100km
+Episode:118/150, avg jerk:3.8075450704539673 
+Episode:118/150, avg halt num:0.8693659281894576
+ Retrying in 1 seconds
+Simulation......
+Episode:119/150, Reward:15.008682305987902
+Episode:119/150, speed Reward:0.0
+Episode:119/150, tls Reward:15.008682305987902
+Episode:119/150, avg speed:7.4916783233114685 m/s
+Episode:119/150, hundred miles ec:15.201225849470015 kwh/100km
+Episode:119/150, avg jerk:4.005199788678084 
+Episode:119/150, avg halt num:1.2211283604695191
+ Retrying in 1 seconds
+Simulation......
+Episode:120/150, Reward:14.528171433867751
+Episode:120/150, speed Reward:0.0
+Episode:120/150, tls Reward:14.528171433867751
+Episode:120/150, avg speed:7.1300156238633665 m/s
+Episode:120/150, hundred miles ec:15.175614426450458 kwh/100km
+Episode:120/150, avg jerk:3.474019343122229 
+Episode:120/150, avg halt num:1.6819119669876204
+ Retrying in 1 seconds
+Simulation......
+Episode:121/150, Reward:14.464991348452738
+Episode:121/150, speed Reward:0.0
+Episode:121/150, tls Reward:14.464991348452738
+Episode:121/150, avg speed:7.020715848838566 m/s
+Episode:121/150, hundred miles ec:15.04815008913691 kwh/100km
+Episode:121/150, avg jerk:3.77788925127682 
+Episode:121/150, avg halt num:1.2579388855602156
+ Retrying in 1 seconds
+Simulation......
+Episode:122/150, Reward:14.85364062472843
+Episode:122/150, speed Reward:0.0
+Episode:122/150, tls Reward:14.85364062472843
+Episode:122/150, avg speed:5.501302640887527 m/s
+Episode:122/150, hundred miles ec:14.759367481775634 kwh/100km
+Episode:122/150, avg jerk:4.3254843997831545 
+Episode:122/150, avg halt num:2.138630319148936
+ Retrying in 1 seconds
+Simulation......
+Episode:123/150, Reward:14.069577326930789
+Episode:123/150, speed Reward:0.0
+Episode:123/150, tls Reward:14.069577326930789
+Episode:123/150, avg speed:7.894103689952074 m/s
+Episode:123/150, hundred miles ec:15.176127725539473 kwh/100km
+Episode:123/150, avg jerk:2.3655128189819905 
+Episode:123/150, avg halt num:1.3254649499284692
+ Retrying in 1 seconds
+Simulation......
+Episode:124/150, Reward:15.049793593778967
+Episode:124/150, speed Reward:0.0
+Episode:124/150, tls Reward:15.049793593778967
+Episode:124/150, avg speed:8.415539509297858 m/s
+Episode:124/150, hundred miles ec:15.184230060120823 kwh/100km
+Episode:124/150, avg jerk:2.1264976841259373 
+Episode:124/150, avg halt num:1.0640138408304498
+ Retrying in 1 seconds
+Simulation......
+Episode:125/150, Reward:14.980050190233456
+Episode:125/150, speed Reward:0.0
+Episode:125/150, tls Reward:14.980050190233456
+Episode:125/150, avg speed:8.053234078476997 m/s
+Episode:125/150, hundred miles ec:15.175202681533245 kwh/100km
+Episode:125/150, avg jerk:3.8366605103530036 
+Episode:125/150, avg halt num:0.8753709198813057
+ Retrying in 1 seconds
+Simulation......
+Episode:126/150, Reward:15.051703279637714
+Episode:126/150, speed Reward:0.0
+Episode:126/150, tls Reward:15.051703279637714
+Episode:126/150, avg speed:9.054859187950704 m/s
+Episode:126/150, hundred miles ec:15.385968686829372 kwh/100km
+Episode:126/150, avg jerk:2.8066511096760736 
+Episode:126/150, avg halt num:0.74016
+ Retrying in 1 seconds
+Simulation......
+Episode:127/150, Reward:15.647252914494713
+Episode:127/150, speed Reward:0.0
+Episode:127/150, tls Reward:15.647252914494713
+Episode:127/150, avg speed:9.488411219174663 m/s
+Episode:127/150, hundred miles ec:15.426499201266674 kwh/100km
+Episode:127/150, avg jerk:2.469546585516146 
+Episode:127/150, avg halt num:0.774812030075188
+ Retrying in 1 seconds
+Simulation......
+Episode:128/150, Reward:15.152516099795063
+Episode:128/150, speed Reward:0.0
+Episode:128/150, tls Reward:15.152516099795063
+Episode:128/150, avg speed:8.65132988930283 m/s
+Episode:128/150, hundred miles ec:15.334561622618645 kwh/100km
+Episode:128/150, avg jerk:3.3791423655744905 
+Episode:128/150, avg halt num:1.0663683818046235
+ Retrying in 1 seconds
+Simulation......
+Episode:129/150, Reward:13.683124976888418
+Episode:129/150, speed Reward:0.0
+Episode:129/150, tls Reward:13.683124976888418
+Episode:129/150, avg speed:5.13970954547859 m/s
+Episode:129/150, hundred miles ec:14.8205364003695 kwh/100km
+Episode:129/150, avg jerk:5.161988276092876 
+Episode:129/150, avg halt num:2.3834367019336007
+ Retrying in 1 seconds
+Simulation......
+Episode:130/150, Reward:14.914405856037126
+Episode:130/150, speed Reward:0.0
+Episode:130/150, tls Reward:14.914405856037126
+Episode:130/150, avg speed:7.209476656923693 m/s
+Episode:130/150, hundred miles ec:15.314038975777628 kwh/100km
+Episode:130/150, avg jerk:2.956902196230504 
+Episode:130/150, avg halt num:1.9170713485244677
+ Retrying in 1 seconds
+Simulation......
+Episode:131/150, Reward:13.94055497816595
+Episode:131/150, speed Reward:0.0
+Episode:131/150, tls Reward:13.94055497816595
+Episode:131/150, avg speed:6.631148632771021 m/s
+Episode:131/150, hundred miles ec:15.013369540271695 kwh/100km
+Episode:131/150, avg jerk:3.8805305171606594 
+Episode:131/150, avg halt num:1.6625487646293888
+ Retrying in 1 seconds
+Simulation......
+Episode:132/150, Reward:14.723733736302059
+Episode:132/150, speed Reward:0.0
+Episode:132/150, tls Reward:14.723733736302059
+Episode:132/150, avg speed:5.10414860722339 m/s
+Episode:132/150, hundred miles ec:14.850185745139994 kwh/100km
+Episode:132/150, avg jerk:5.927856226206858 
+Episode:132/150, avg halt num:2.4574791192103267
+ Retrying in 1 seconds
+Simulation......
+Episode:133/150, Reward:15.480629179779948
+Episode:133/150, speed Reward:0.0
+Episode:133/150, tls Reward:15.480629179779948
+Episode:133/150, avg speed:10.381286573992703 m/s
+Episode:133/150, hundred miles ec:15.627676863951914 kwh/100km
+Episode:133/150, avg jerk:1.974788974812431 
+Episode:133/150, avg halt num:0.5263757115749526
+ Retrying in 1 seconds
+Simulation......
+Episode:134/150, Reward:15.446442964394482
+Episode:134/150, speed Reward:0.0
+Episode:134/150, tls Reward:15.446442964394482
+Episode:134/150, avg speed:9.930867316804544 m/s
+Episode:134/150, hundred miles ec:15.526359448866751 kwh/100km
+Episode:134/150, avg jerk:2.441080819512057 
+Episode:134/150, avg halt num:0.5236889692585895
+ Retrying in 1 seconds
+Simulation......
+Episode:135/150, Reward:15.31278956699928
+Episode:135/150, speed Reward:0.0
+Episode:135/150, tls Reward:15.31278956699928
+Episode:135/150, avg speed:9.822635392684834 m/s
+Episode:135/150, hundred miles ec:15.593918859040002 kwh/100km
+Episode:135/150, avg jerk:2.4565533683101948 
+Episode:135/150, avg halt num:0.6327190430003233
+ Retrying in 1 seconds
+Simulation......
+Episode:136/150, Reward:15.220810474083917
+Episode:136/150, speed Reward:0.0
+Episode:136/150, tls Reward:15.220810474083917
+Episode:136/150, avg speed:9.281982819059543 m/s
+Episode:136/150, hundred miles ec:15.586809055987061 kwh/100km
+Episode:136/150, avg jerk:2.928902569743315 
+Episode:136/150, avg halt num:0.8026832460732984
+ Retrying in 1 seconds
+Simulation......
+Episode:137/150, Reward:15.503690504528041
+Episode:137/150, speed Reward:0.0
+Episode:137/150, tls Reward:15.503690504528041
+Episode:137/150, avg speed:9.978290129916813 m/s
+Episode:137/150, hundred miles ec:15.643735099782894 kwh/100km
+Episode:137/150, avg jerk:2.395722762985817 
+Episode:137/150, avg halt num:0.6217067583046965
+ Retrying in 1 seconds
+Simulation......
+Episode:138/150, Reward:14.101604759728533
+Episode:138/150, speed Reward:0.0
+Episode:138/150, tls Reward:14.101604759728533
+Episode:138/150, avg speed:4.5712052665439185 m/s
+Episode:138/150, hundred miles ec:14.666838234834016 kwh/100km
+Episode:138/150, avg jerk:7.15480069799924 
+Episode:138/150, avg halt num:2.021951219512195
+ Retrying in 1 seconds
+Simulation......
+Episode:139/150, Reward:16.374750696706766
+Episode:139/150, speed Reward:0.0
+Episode:139/150, tls Reward:16.374750696706766
+Episode:139/150, avg speed:11.905621067641466 m/s
+Episode:139/150, hundred miles ec:16.058195549739704 kwh/100km
+Episode:139/150, avg jerk:1.7132257108716749 
+Episode:139/150, avg halt num:0.3508527671423599
+ Retrying in 1 seconds
+Simulation......
+Episode:140/150, Reward:16.075435238603635
+Episode:140/150, speed Reward:0.0
+Episode:140/150, tls Reward:16.075435238603635
+Episode:140/150, avg speed:10.269044206015757 m/s
+Episode:140/150, hundred miles ec:15.81269734039897 kwh/100km
+Episode:140/150, avg jerk:2.162935596309514 
+Episode:140/150, avg halt num:0.7714067278287462
+ Retrying in 1 seconds
+Simulation......
+Episode:141/150, Reward:14.95248319148467
+Episode:141/150, speed Reward:0.0
+Episode:141/150, tls Reward:14.95248319148467
+Episode:141/150, avg speed:8.766559439951017 m/s
+Episode:141/150, hundred miles ec:15.54460616515689 kwh/100km
+Episode:141/150, avg jerk:3.1153057728873192 
+Episode:141/150, avg halt num:1.156590311678558
+ Retrying in 1 seconds
+Simulation......
+Episode:142/150, Reward:16.14951634245448
+Episode:142/150, speed Reward:0.0
+Episode:142/150, tls Reward:16.14951634245448
+Episode:142/150, avg speed:10.459146097455982 m/s
+Episode:142/150, hundred miles ec:15.656437606345941 kwh/100km
+Episode:142/150, avg jerk:1.897872347046122 
+Episode:142/150, avg halt num:0.693267776096823
+ Retrying in 1 seconds
+Simulation......
+Episode:143/150, Reward:15.841142227680976
+Episode:143/150, speed Reward:0.0
+Episode:143/150, tls Reward:15.841142227680976
+Episode:143/150, avg speed:9.065637970878994 m/s
+Episode:143/150, hundred miles ec:15.71777434774736 kwh/100km
+Episode:143/150, avg jerk:2.230083055539835 
+Episode:143/150, avg halt num:1.1794783802333562
+ Retrying in 1 seconds
+Simulation......
+Episode:144/150, Reward:14.941940394210775
+Episode:144/150, speed Reward:0.0
+Episode:144/150, tls Reward:14.941940394210775
+Episode:144/150, avg speed:8.803468721848425 m/s
+Episode:144/150, hundred miles ec:15.551504607220892 kwh/100km
+Episode:144/150, avg jerk:2.4667413456906395 
+Episode:144/150, avg halt num:1.1958393113342898
+ Retrying in 1 seconds
+Simulation......
+Episode:145/150, Reward:14.81407420835763
+Episode:145/150, speed Reward:0.0
+Episode:145/150, tls Reward:14.81407420835763
+Episode:145/150, avg speed:7.682252778335669 m/s
+Episode:145/150, hundred miles ec:15.294657670524622 kwh/100km
+Episode:145/150, avg jerk:2.6852608427197913 
+Episode:145/150, avg halt num:1.5775927327781982
+ Retrying in 1 seconds
+Simulation......
+Episode:146/150, Reward:14.782511750730317
+Episode:146/150, speed Reward:0.0
+Episode:146/150, tls Reward:14.782511750730317
+Episode:146/150, avg speed:9.776872681806003 m/s
+Episode:146/150, hundred miles ec:15.858043824343222 kwh/100km
+Episode:146/150, avg jerk:2.2825874944704 
+Episode:146/150, avg halt num:0.9121522693997072
+ Retrying in 1 seconds
+Simulation......
+Episode:147/150, Reward:14.634061697368235
+Episode:147/150, speed Reward:0.0
+Episode:147/150, tls Reward:14.634061697368235
+Episode:147/150, avg speed:9.379609105697915 m/s
+Episode:147/150, hundred miles ec:15.777889834888192 kwh/100km
+Episode:147/150, avg jerk:2.2741924683538928 
+Episode:147/150, avg halt num:0.9683377308707124
+ Retrying in 1 seconds
+Simulation......
+Episode:148/150, Reward:15.241509383901015
+Episode:148/150, speed Reward:0.0
+Episode:148/150, tls Reward:15.241509383901015
+Episode:148/150, avg speed:10.02911708208268 m/s
+Episode:148/150, hundred miles ec:15.856843643470278 kwh/100km
+Episode:148/150, avg jerk:2.228659849862176 
+Episode:148/150, avg halt num:0.7503392130257802
+ Retrying in 1 seconds
+Simulation......
+Episode:149/150, Reward:16.79518732594795
+Episode:149/150, speed Reward:0.0
+Episode:149/150, tls Reward:16.79518732594795
+Episode:149/150, avg speed:11.205381180066489 m/s
+Episode:149/150, hundred miles ec:16.127223338757318 kwh/100km
+Episode:149/150, avg jerk:2.012498445782112 
+Episode:149/150, avg halt num:0.6071713147410358
+ Retrying in 1 seconds
+Simulation......
+Episode:150/150, Reward:15.86193873333805
+Episode:150/150, speed Reward:0.0
+Episode:150/150, tls Reward:15.86193873333805
+Episode:150/150, avg speed:10.344166621777063 m/s
+Episode:150/150, hundred miles ec:16.072828525660967 kwh/100km
+Episode:150/150, avg jerk:2.6488772462130057 
+Episode:150/150, avg halt num:0.7592652271994844
+model saved successfully!
+Complete training!
+final reward list:[10.225182710940425, 10.598421184514153, 13.772045961539753, 11.842005013375127, 13.474476375824569, 12.047958309285121, 14.442512747129614, 13.890785576458683, 13.169254303766316, 13.817990791456916, 13.757275206298141, 13.85477379989772, 13.457666899504526, 14.097389002715982, 13.925661761555604, 14.644023021866959, 14.137835884007147, 16.278116008926073, 16.570737420714657, 14.27413517346248, 16.336935433948444, 17.530413172617976, 17.152159963206138, 13.950826395718364, 16.348911980925305, 15.008566374549918, 14.311012857762263, 15.102983248269274, 16.70772668044941, 16.119399380478182, 14.461690311682759, 14.868636669767858, 13.155144568245086, 14.36779137721393, 14.237109221304346, 17.731084365412297, 17.256819722030524, 16.77262116021316, 16.334647994872768, 14.16389403939847, 13.44025252400968, 14.95373690638086, 14.57900438886999, 14.321927798449046, 14.006999697603112, 15.918552673506287, 15.611950401225638, 16.373632205882178, 14.141418880944153, 15.622484355009538, 13.725963248021612, 15.581681684694164, 13.788928788882945, 15.43388825350669, 15.45491231267233, 16.443912234882593, 18.701663169832262, 16.292592314222, 17.771906288233833, 18.606093508495075, 15.287040753530995, 14.767258463454736, 14.08195513906248, 14.332591279578688, 14.747851381374222, 14.474302173805508, 13.911559872734923, 15.009346731713723, 14.934127304889268, 15.314924964767162, 14.90375477826323, 16.368706021298216, 15.166737338264534, 15.979407961041511, 17.05341545932882, 13.989096704862012, 13.765621285900423, 15.763236216282635, 16.099372683054394, 16.581207738432465, 18.51172082292643, 14.717519724968902, 13.93727548966137, 18.51047453894225, 16.431494534717473, 14.991743097393092, 16.22616428392636, 14.884452205072092, 14.043592192042182, 16.97447964174642, 17.067079424571503, 17.64318110785289, 14.36311557745123, 15.151301721379806, 17.166832681482603, 17.407576985813055, 14.35410719327557, 17.866181788098668, 14.998789695611693, 14.25428875712996, 13.66393219667655, 15.96772604814112, 17.33078309515806, 17.079326493318266, 14.81235595676036, 17.84626411045088, 16.51123586637487, 16.510136974984178, 17.24080504378214, 14.34255394518027, 17.55605246384599, 17.893765855110647, 18.016155012916972, 15.41882266300267, 17.004212600356507, 18.269837074065283, 14.543949456278398, 15.149035576548682, 15.008682305987902, 14.528171433867751, 14.464991348452738, 14.85364062472843, 14.069577326930789, 15.049793593778967, 14.980050190233456, 15.051703279637714, 15.647252914494713, 15.152516099795063, 13.683124976888418, 14.914405856037126, 13.94055497816595, 14.723733736302059, 15.480629179779948, 15.446442964394482, 15.31278956699928, 15.220810474083917, 15.503690504528041, 14.101604759728533, 16.374750696706766, 16.075435238603635, 14.95248319148467, 16.14951634245448, 15.841142227680976, 14.941940394210775, 14.81407420835763, 14.782511750730317, 14.634061697368235, 15.241509383901015, 16.79518732594795, 15.86193873333805]
+final halt list:[1.4733207784055242, 1.810948656919415, 1.7245710784313726, 0.9957115009746589, 0.7184128089105465, 0.9930758017492711, 0.6553415061295972, 0.850715137067938, 0.7948870392390012, 1.7211851851851852, 1.5979467258601554, 1.6957656612529002, 1.646045918367347, 1.5108974358974359, 1.60355871886121, 0.8046065259117082, 1.2736486486486487, 0.8987755102040816, 0.23272727272727273, 0.7946243969676086, 0.678215850258861, 0.1187725631768953, 0.08412806539509536, 1.0836974789915967, 0.19110576923076922, 1.3630838131797824, 1.5468215994531784, 0.9116045245077503, 0.5283018867924528, 0.43067937288656627, 1.6344802071772104, 0.7664783427495292, 0.7759388924252069, 1.6302806918060675, 0.7045377004435346, 0.6584362139917695, 0.05660377358490566, 0.4852207293666027, 0.5162110616656072, 1.7519255455712452, 0.8818149841716497, 0.594553706505295, 2.0886648122392213, 1.9196428571428572, 0.7447037701974866, 0.37873545139981124, 0.6370229007633588, 0.47414702778754836, 1.4948604992657857, 0.3364398881640261, 1.5212514757969304, 1.8111814345991561, 1.4966599866399466, 1.1462868117797695, 1.487912087912088, 0.9041545189504373, 0.048820852296235, 0.7258127692910301, 0.061095782420181315, 0.07118412046543464, 1.3129395218002813, 1.2529394030750678, 1.5898416166029492, 1.740819209039548, 1.9162198391420913, 1.2638261851015802, 1.6257364341085272, 0.9229539641943734, 1.1572481572481572, 1.1526861451460886, 0.8361635220125786, 0.38399720475192173, 0.5245202558635395, 0.5532458059810358, 0.36516476126429054, 1.6440677966101696, 2.043544112078758, 1.1982484076433122, 0.30507272082298686, 0.4103612815269257, 0.06933629959213941, 1.2462977396726422, 1.474920634920635, 0.2527955271565495, 0.9474570562478949, 0.5052115266707541, 0.7668329177057357, 1.3104273504273505, 1.615413964135826, 0.48104265402843605, 0.16860232278734483, 0.30672579453067256, 1.9823100936524454, 0.4025931928687196, 0.08139075464243382, 0.18857589984350548, 1.0685645549318363, 0.14904744116548374, 0.7347140039447732, 0.7954405422057917, 0.4996635262449529, 0.4619718309859155, 0.27808988764044945, 0.20459846717760746, 1.7536496350364963, 0.15177304964539007, 0.4144689950106914, 0.8397594623275557, 0.3378191856452726, 2.0196196800482946, 0.3511450381679389, 0.17765495459928937, 0.19571984435797665, 0.8264434574649812, 0.3048128342245989, 0.19768664563617244, 1.057271780631725, 0.8693659281894576, 1.2211283604695191, 1.6819119669876204, 1.2579388855602156, 2.138630319148936, 1.3254649499284692, 1.0640138408304498, 0.8753709198813057, 0.74016, 0.774812030075188, 1.0663683818046235, 2.3834367019336007, 1.9170713485244677, 1.6625487646293888, 2.4574791192103267, 0.5263757115749526, 0.5236889692585895, 0.6327190430003233, 0.8026832460732984, 0.6217067583046965, 2.021951219512195, 0.3508527671423599, 0.7714067278287462, 1.156590311678558, 0.693267776096823, 1.1794783802333562, 1.1958393113342898, 1.5775927327781982, 0.9121522693997072, 0.9683377308707124, 0.7503392130257802, 0.6071713147410358, 0.7592652271994844]
+speed reward list:[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+tls reward list:[10.225182710940425, 10.598421184514153, 13.772045961539753, 11.842005013375127, 13.474476375824569, 12.047958309285121, 14.442512747129614, 13.890785576458683, 13.169254303766316, 13.817990791456916, 13.757275206298141, 13.85477379989772, 13.457666899504526, 14.097389002715982, 13.925661761555604, 14.644023021866959, 14.137835884007147, 16.278116008926073, 16.570737420714657, 14.27413517346248, 16.336935433948444, 17.530413172617976, 17.152159963206138, 13.950826395718364, 16.348911980925305, 15.008566374549918, 14.311012857762263, 15.102983248269274, 16.70772668044941, 16.119399380478182, 14.461690311682759, 14.868636669767858, 13.155144568245086, 14.36779137721393, 14.237109221304346, 17.731084365412297, 17.256819722030524, 16.77262116021316, 16.334647994872768, 14.16389403939847, 13.44025252400968, 14.95373690638086, 14.57900438886999, 14.321927798449046, 14.006999697603112, 15.918552673506287, 15.611950401225638, 16.373632205882178, 14.141418880944153, 15.622484355009538, 13.725963248021612, 15.581681684694164, 13.788928788882945, 15.43388825350669, 15.45491231267233, 16.443912234882593, 18.701663169832262, 16.292592314222, 17.771906288233833, 18.606093508495075, 15.287040753530995, 14.767258463454736, 14.08195513906248, 14.332591279578688, 14.747851381374222, 14.474302173805508, 13.911559872734923, 15.009346731713723, 14.934127304889268, 15.314924964767162, 14.90375477826323, 16.368706021298216, 15.166737338264534, 15.979407961041511, 17.05341545932882, 13.989096704862012, 13.765621285900423, 15.763236216282635, 16.099372683054394, 16.581207738432465, 18.51172082292643, 14.717519724968902, 13.93727548966137, 18.51047453894225, 16.431494534717473, 14.991743097393092, 16.22616428392636, 14.884452205072092, 14.043592192042182, 16.97447964174642, 17.067079424571503, 17.64318110785289, 14.36311557745123, 15.151301721379806, 17.166832681482603, 17.407576985813055, 14.35410719327557, 17.866181788098668, 14.998789695611693, 14.25428875712996, 13.66393219667655, 15.96772604814112, 17.33078309515806, 17.079326493318266, 14.81235595676036, 17.84626411045088, 16.51123586637487, 16.510136974984178, 17.24080504378214, 14.34255394518027, 17.55605246384599, 17.893765855110647, 18.016155012916972, 15.41882266300267, 17.004212600356507, 18.269837074065283, 14.543949456278398, 15.149035576548682, 15.008682305987902, 14.528171433867751, 14.464991348452738, 14.85364062472843, 14.069577326930789, 15.049793593778967, 14.980050190233456, 15.051703279637714, 15.647252914494713, 15.152516099795063, 13.683124976888418, 14.914405856037126, 13.94055497816595, 14.723733736302059, 15.480629179779948, 15.446442964394482, 15.31278956699928, 15.220810474083917, 15.503690504528041, 14.101604759728533, 16.374750696706766, 16.075435238603635, 14.95248319148467, 16.14951634245448, 15.841142227680976, 14.941940394210775, 14.81407420835763, 14.782511750730317, 14.634061697368235, 15.241509383901015, 16.79518732594795, 15.86193873333805]
