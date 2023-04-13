@@ -72,7 +72,7 @@ def test():
     ##############################
     print(curr_path)
     # 13
-    target_path = './models/nnew13.pth'
+    target_path = './models/cpu5.pth'
 
     print('-----------')
     print(target_path)
@@ -92,7 +92,7 @@ def test():
         generate_test_cfg_file(ep = i_episode + 1, path='test_rou_net')    #######
         cfg_file_name = 'test_rou_net/intersection' + str(i_episode + 1) + '.sumocfg'
         cfg_file = os.path.join(curr_path, cfg_file_name)
-        sumo_cmd = set_sumo(gui=False, sumocfg_file_name = cfg_file, max_steps=3600)
+        sumo_cmd = set_sumo(gui=True, sumocfg_file_name = cfg_file, max_steps=3600)
 
         agent.reset() #重置噪声
         
@@ -111,6 +111,7 @@ def test():
             i_step += 1
             # 只有有车才进行学习
             if traci.vehicle.getIDCount() > 0:
+                print("if")
                 current_state_dict = agent.get_current_state()         
                 action_dict = agent.choose_action(current_state_dict, i_step, add_noise=False)
                 action_dict = agent.step(current_state_dict, action_dict)
@@ -164,6 +165,7 @@ def test():
                     
             else:
                 traci.simulationStep()
+                print("nxt", i_step)
         traci.close()
         
         np_speed_list = []
