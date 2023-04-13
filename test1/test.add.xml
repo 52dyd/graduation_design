@@ -6,15 +6,15 @@
     </rerouter>
     <rerouter id="rerouter_2" edges="821948824#7">
         <interval end="1e9">
-           <destProbReroute id="544372381#10"/>
+           <destProbReroute id="544372381#6"/>
         </interval>
     </rerouter>
-    <rerouter id="rerouter_3" edges="544372381#10">
+    <rerouter id="rerouter_3" edges="544372381#6">
         <interval end="1e9">
-           <destProbReroute id="299070353#2"/>
+           <destProbReroute id="299070353#6"/>
         </interval>
     </rerouter>
-    <rerouter id="rerouter_4" edges="299070353#2">
+    <rerouter id="rerouter_4" edges="299070353#6">
         <interval end="1e9">
            <destProbReroute id="299070353#9"/>
         </interval>
