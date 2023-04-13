@@ -165,7 +165,7 @@ def eval():
         generate_test_cfg_file(train_eps = i_episode + 1)
         cfg_file_name = 'test_rou_net/intersection' + str(i_episode + 1) + '.sumocfg'
         cfg_file = os.path.join(curr_path, cfg_file_name)
-        sumo_cmd = set_sumo(gui=False, sumocfg_file_name = cfg_file, max_steps=3600)
+        sumo_cmd = set_sumo(gui=True, sumocfg_file_name = cfg_file, max_steps=3600)
         ###########################################################################
 
         ep_reward, avg_speed_list, avg_halt_num_list, avg_elec_cons_list, total_elec_cons, episode_travel_time = run_simulation_eval(agent, sumo_cmd, cfg.simulation_steps)
