@@ -9,6 +9,7 @@ import datetime
 import torch
 import random
 import contextlib
+import datetime
 import numpy as np
 
 from traffic import get_avg_speed
@@ -41,8 +42,8 @@ class DDPGConfig:
         self.algo = 'DDPG'
         self.env = 'SUMO' # env name
 
-        self.gamma = 0.95
-        self.epsilon = 0.001
+        self.gamma = 0.99
+        self.epsilon = 0.0005
 
         self.critic_lr = 5e-3
         self.actor_lr = 1e-4
@@ -82,8 +83,8 @@ def train():
     #############################3
     torch.cuda.set_device(1)
     ##############################
-
-    dest_path = 'models/mofan2.pth'
+    now = datetime.datetime.now()
+    dest_path = 'models/' + now.strftime("%Y-%m-%d %H:%M:%S") + '.pth'
 
     print('-----------------------------------------')
     print(dest_path)
@@ -94,6 +95,7 @@ def train():
     episode_avg_halt_list = []
     learning_step = 0
     for i_episode in range(cfg.train_eps):
+        generate_rou_file(ep = i_episode + 1)
         generate_cfg_file(ep = i_episode + 1, path='rou_net')    #######
         cfg_file_name = 'rou_net/intersection' + str(i_episode + 1) + '.sumocfg'
         cfg_file = os.path.join(curr_path, cfg_file_name)

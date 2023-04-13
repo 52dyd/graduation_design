@@ -54,7 +54,7 @@ def generate_cfg_file(ep, path='test_rou_net'):
 
 
 
-def generate_rou_file(ep, simulation_steps = 3600, car_count_per_lane = 100, path='test_rou_net'):
+def generate_rou_file(ep, simulation_steps = 3600, car_count_per_lane = 25, path='test_rou_net'):
     #在4000s内随机生成400辆车
     random.seed(42)  #设置随机数种子，能够让结果重现
     timings_ns = np.random.weibull(2, car_count_per_lane)

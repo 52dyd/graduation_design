@@ -2,6 +2,7 @@ import os
 import traci
 import torch
 import random
+import datetime
 import numpy as np
 from collections import defaultdict
 
@@ -52,8 +53,8 @@ class DDPGConfig:
         self.soft_tau = 0.005
         self.max_action = 2
 
-        # self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-        self.device = torch.device("cpu")
+        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        #self.device = torch.device("cpu")
 
         self.simulation_steps = 3600
 
@@ -83,7 +84,8 @@ def train():
     gamma_arr = [0.7, 0.8, 0.9, 0.99, 0.999]
     tau_arr = [0.001, 0.005, 0.01, 0.05, 0.1]
     # dest_path = 'models/test4.pth'
-    dest_path = 'models/cpu5.pth'
+    now = datetime.datetime.now()
+    dest_path = 'models/' + now.strftime("%Y%m%d-%H:%M:%S") + '.pth'
     
     # single1.pth
     # writer_path = 'tensorboard/7'
