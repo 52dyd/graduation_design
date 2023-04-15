@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 2023-04-12 16:51:40 by Eclipse SUMO netedit Version 1.16.0
+<!-- generated on 2023-04-15 09:43:56 by Eclipse SUMO netedit Version v1_16_0+0802-cb0bb8ac9af
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
 
     <input>
-        <sumo-net-file value="C:\Users\18365\Desktop\毕设\test\test1\test.net.xml"/>
+        <sumo-net-file value="test.net.xml"/>
     </input>
 
     <output>
-        <output-file value="C:\Users\18365\Desktop\毕设\test\test1\test.net.xml"/>
+        <output-file value="test.net.xml"/>
     </output>
 
     <processing>
@@ -1442,59 +1442,40 @@
 
     <tlLogic id="7674592114" type="static" programID="0" offset="0">
         <phase duration="25" state="GrrrrrGGg"/>
-        <phase duration="5"  state="yrrrrryyy"/>
         <phase duration="25" state="GGgGrrrrr"/>
-        <phase duration="5"  state="yyyyrrrrr"/>
-        <phase duration="25" state="rrrGGgGrr"/>
-        <phase duration="5"  state="rrryyyyrr"/>
+        <phase duration="25" state="GrrGGgGrr"/>
     </tlLogic>
     <tlLogic id="7674592117" type="static" programID="0" offset="0">
         <phase duration="40" state="GggrrrGGg"/>
-        <phase duration="5"  state="yyyrrryyy"/>
-        <phase duration="40" state="rrrGGgGrr"/>
-        <phase duration="5"  state="rrryyyyrr"/>
+        <phase duration="20" state="rrrGGgGrr"/>
     </tlLogic>
     <tlLogic id="cluster_3030116931_3044755290_5262355532_5262355533" type="static" programID="0" offset="0">
-        <phase duration="39" state="GGGggrrrrrGGGggrrrrr"/>
-        <phase duration="6"  state="yyyyyrrrrryyyyyrrrrr"/>
-        <phase duration="39" state="rrrrrGGGggrrrrrGGGgg"/>
-        <phase duration="6"  state="rrrrryyyyyrrrrryyyyy"/>
+        <phase duration="20" state="GGGggrrrrrGGGggrrrrr"/>
+        <phase duration="40" state="rrrrrGGGggrrrrrGGGgg"/>
     </tlLogic>
     <tlLogic id="cluster_3044755287_3044755288" type="static" programID="0" offset="0">
-        <phase duration="39" state="GGggrrrGGGg"/>
-        <phase duration="6"  state="yyyyrrryyyy"/>
-        <phase duration="39" state="GrrGGGgGrrG"/>
-        <phase duration="6"  state="rrrryyyyrrr"/>
+        <phase duration="40" state="GGggrrrGGGg"/>
+        <phase duration="20" state="rrrGGGgGrrG"/>
     </tlLogic>
     <tlLogic id="cluster_7674592112_8677734818" type="static" programID="0" offset="0">
         <phase duration="40" state="GGgGggrrr"/>
-        <phase duration="5"  state="yyyyyyrrr"/>
-        <phase duration="40" state="GrrrrrGGg"/>
-        <phase duration="5"  state="yrrrrryyy"/>
+        <phase duration="20" state="GrrgrrGGg"/>
     </tlLogic>
     <tlLogic id="cluster_7674592124_7674592125" type="static" programID="0" offset="0">
-        <phase duration="39" state="GGGggrrrrGGGggrrrr"/>
-        <phase duration="6"  state="yyyyyrrrryyyyyrrrr"/>
-        <phase duration="39" state="rrrrrGGggrrrrrGGgg"/>
-        <phase duration="6"  state="rrrrryyyyrrrrryyyy"/>
+        <phase duration="39" state="GGGgggrrrGGGggrrrr"/>
+        <phase duration="39" state="grrrrGGggrrrrrGGgg"/>
     </tlLogic>
     <tlLogic id="cluster_7782675767_8677734833" type="static" programID="0" offset="0">
         <phase duration="40" state="GGgGggrrr"/>
-        <phase duration="5"  state="yyyyyyrrr"/>
-        <phase duration="40" state="GrrrrrGGg"/>
-        <phase duration="5"  state="yrrrrryyy"/>
+        <phase duration="20" state="GrrgrrGGg"/>
     </tlLogic>
     <tlLogic id="cluster_7782675770_8677734855" type="static" programID="0" offset="0">
         <phase duration="40" state="GggrrrGGg"/>
-        <phase duration="5"  state="yyyrrryyy"/>
-        <phase duration="40" state="rrrGGgGrr"/>
-        <phase duration="5"  state="rrryyyyrr"/>
+        <phase duration="20" state="rrrGGgGrr"/>
     </tlLogic>
     <tlLogic id="cluster_7782675771_7782675772" type="static" programID="0" offset="0">
-        <phase duration="39" state="GGggrrrGGGg"/>
-        <phase duration="6"  state="yyyyrrryyyy"/>
+        <phase duration="39" state="GGgggrrGGGg"/>
         <phase duration="39" state="rrrrGGgGrrr"/>
-        <phase duration="6"  state="rrrryyyyrrr"/>
     </tlLogic>
 
     <junction id="299070353#2-AddedOffRampNode" type="priority" x="3638.23" y="7020.37" incLanes="299070353#2_0 299070353#2_1" intLanes=":299070353#2-AddedOffRampNode_0_0 :299070353#2-AddedOffRampNode_0_1 :299070353#2-AddedOffRampNode_0_2" shape="3642.15,7023.64 3642.26,7017.24 3634.20,7017.17 3634.20,7026.77 3637.21,7025.94 3638.17,7025.18 3639.14,7024.42 3640.37,7023.84">
