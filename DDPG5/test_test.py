@@ -52,7 +52,7 @@ class DDPGConfig:
 
         self.simulation_steps = 2000
         self.modelPth = 'models/cpu5.pth'
-        self.sumocfgPth = 'test1/test.sumocfgPth'
+        self.sumocfgPth = 'test1/test.sumocfg'
 
 def test():
     cfg = DDPGConfig()

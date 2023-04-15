@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 2023-04-15 09:43:56 by Eclipse SUMO netedit Version v1_16_0+0802-cb0bb8ac9af
+<!-- generated on 2023-04-15 10:54:32 by Eclipse SUMO netedit Version v1_16_0+0802-cb0bb8ac9af
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
 
     <input>
@@ -1441,41 +1441,41 @@
     </edge>
 
     <tlLogic id="7674592114" type="static" programID="0" offset="0">
-        <phase duration="25" state="GrrrrrGGg"/>
-        <phase duration="25" state="GGgGrrrrr"/>
-        <phase duration="25" state="GrrGGgGrr"/>
+        <phase duration="25" state="GrrrrrGGg" name="y1"/>
+        <phase duration="25" state="GGgGrrrrr" name="y2"/>
+        <phase duration="25" state="GrrGGgGrr" name="y3"/>
     </tlLogic>
     <tlLogic id="7674592117" type="static" programID="0" offset="0">
-        <phase duration="40" state="GggrrrGGg"/>
-        <phase duration="20" state="rrrGGgGrr"/>
+        <phase duration="40" state="GggrrrGGg" name="y"/>
+        <phase duration="20" state="rrrGGgGrr" name="n"/>
     </tlLogic>
     <tlLogic id="cluster_3030116931_3044755290_5262355532_5262355533" type="static" programID="0" offset="0">
-        <phase duration="20" state="GGGggrrrrrGGGggrrrrr"/>
-        <phase duration="40" state="rrrrrGGGggrrrrrGGGgg"/>
+        <phase duration="20" state="GGGggrrrrrGGGggrrrrr" name="n"/>
+        <phase duration="40" state="rrrrrGGGggrrrrrGGGgg" name="y"/>
     </tlLogic>
     <tlLogic id="cluster_3044755287_3044755288" type="static" programID="0" offset="0">
-        <phase duration="40" state="GGggrrrGGGg"/>
-        <phase duration="20" state="rrrGGGgGrrG"/>
+        <phase duration="40" state="GGggrrrGGGg" name="y"/>
+        <phase duration="20" state="rrrGGGgGrrG" name="n"/>
     </tlLogic>
     <tlLogic id="cluster_7674592112_8677734818" type="static" programID="0" offset="0">
-        <phase duration="40" state="GGgGggrrr"/>
-        <phase duration="20" state="GrrgrrGGg"/>
+        <phase duration="40" state="GGgGggrrr" name="y"/>
+        <phase duration="20" state="GrrgrrGGg" name="n"/>
     </tlLogic>
     <tlLogic id="cluster_7674592124_7674592125" type="static" programID="0" offset="0">
-        <phase duration="39" state="GGGgggrrrGGGggrrrr"/>
-        <phase duration="39" state="grrrrGGggrrrrrGGgg"/>
+        <phase duration="39" state="GGGgggrrrGGGggrrrr" name="y1"/>
+        <phase duration="39" state="grrrrGGggrrrrrGGgg" name="y2"/>
     </tlLogic>
     <tlLogic id="cluster_7782675767_8677734833" type="static" programID="0" offset="0">
-        <phase duration="40" state="GGgGggrrr"/>
-        <phase duration="20" state="GrrgrrGGg"/>
+        <phase duration="40" state="GGgGggrrr" name="y"/>
+        <phase duration="20" state="GrrgrrGGg" name="n"/>
     </tlLogic>
     <tlLogic id="cluster_7782675770_8677734855" type="static" programID="0" offset="0">
-        <phase duration="40" state="GggrrrGGg"/>
-        <phase duration="20" state="rrrGGgGrr"/>
+        <phase duration="40" state="GggrrrGGg" name="y"/>
+        <phase duration="20" state="rrrGGgGrr" name="n"/>
     </tlLogic>
     <tlLogic id="cluster_7782675771_7782675772" type="static" programID="0" offset="0">
-        <phase duration="39" state="GGgggrrGGGg"/>
-        <phase duration="39" state="rrrrGGgGrrr"/>
+        <phase duration="39" state="GGgggrrGGGg" name="y1"/>
+        <phase duration="39" state="rrrrGGgGrrr" name="y2"/>
     </tlLogic>
 
     <junction id="299070353#2-AddedOffRampNode" type="priority" x="3638.23" y="7020.37" incLanes="299070353#2_0 299070353#2_1" intLanes=":299070353#2-AddedOffRampNode_0_0 :299070353#2-AddedOffRampNode_0_1 :299070353#2-AddedOffRampNode_0_2" shape="3642.15,7023.64 3642.26,7017.24 3634.20,7017.17 3634.20,7026.77 3637.21,7025.94 3638.17,7025.18 3639.14,7024.42 3640.37,7023.84">
