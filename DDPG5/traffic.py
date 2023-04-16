@@ -128,6 +128,194 @@ def calc_ttc(v1, v2, a1, a2, dist, minGap = 1.5):
         
     return ttc
     
+# todo 需要重构
+# 为什么呢
+# greenTime存储当前绿灯结束时间，但有可能连续phase都可以通过，因此需要一直往后查
+# 甚至存在任何phase都可以通过的情况，这时需要考虑greenTime=取什么值比较合适
+def getNCCTlsInfo1(vehID):  # 用于替代 get_tls_info()
+    tlsInfo = traci.vehicle.getNextTLS(vehID)
+    vehLane = traci.vehicle.getLaneID(vehID)
+    if(len(tlsInfo)) != 0:
+        tlsID = tlsInfo[0][0]
+        distTOIntersec = tlsInfo[0][2]
+        tlsPhaseName = traci.trafficlight.getPhaseName(tlsID)
+        currPhaseDuration = traci.trafficlight.getNextSwitch(tlsID) - traci.simulation.getTime()
+        tlsPhases = traci.trafficlight.getCompleteRedYellowGreenDefinition(tlsID)[0].phases
+        tlsPhaseDict = defaultdict()
+        for i in range(len(tlsPhases)):
+            tlsPhaseDict[tlsPhases[i].name] = tlsPhases[i].duration
+        
+        tlsFlag = -1 # tlsFlag为0，当前不可通过，为1可通过
+        greenTime = 0 #tlsFlag为0，greenTime存储下个绿灯开始时间，tlsFlag为1，存储当前绿灯结束时间 
+        if isNormalTLS(tlsPhases=tlsPhases):
+            if 'y' in tlsPhaseName:
+                return 1, getGreenRemainTime(tlsPhaseName, tlsPhases=tlsPhases) + currPhaseDuration, distTOIntersec 
+            else:
+                return 0, currPhaseDuration + getNxtGreenBgn(tlsPhaseName, tlsPhases=tlsPhases), distTOIntersec
+        else:
+            return 1, 0x3f3f3f3f, distTOIntersec # 0x3f3f3f3f stands for max_int
+
+        # if 'y' in tlsPhaseName:
+        #     tlsFlag = 1
+        #     greenTime = currPhaseDuration
+        # else:
+        #     tlsFlag = 0
+        #     greenTime = currPhaseDuration
+        #     loc = 0
+        #     while(loc < len(tlsPhases)):
+        #         if tlsPhases[loc].name != tlsPhaseName:
+        #             loc += 1
+        #         else:
+        #             break
+        #     # 一直加，加到接下来某一个相位名称中含有Y就可以了
+        #     while(True):
+        #         loc += 1
+        #         if(loc == len(tlsPhases)):
+        #             loc = 0
+        #         if('y' in tlsPhases[loc].name): # 可通行的红绿灯相位名称中都有Y
+        #             break
+        #         greenTime += tlsPhases[loc].duration
+        
+        # return tlsFlag, greenTime, distTOIntersec
+
+
+# todo 需要重构
+# 理由同上
+
+# 这里有一组获取时间的函数，分别是获取当前绿灯剩余时间，
+
+# 首先区分是否是正常路口，即至少存在一个相位可以通过，且至少存在一个相位不可以通过
+def isNormalTLS(tlsPhases):
+    yExist = False
+    nExist = False
+    for i in range(len(tlsPhases)):
+        if 'y' in tlsPhases[i].name:
+            yExist = True
+            break
+    
+    for i in range(len(tlsPhases)):
+        if 'n' in tlsPhases[i].name:
+            nExist = True
+            break
+    
+    return yExist and nExist
+
+def getAllTime(tlsPhases):
+    allTime = 0
+    for i in range(len(tlsPhases)):
+        allTime += tlsPhases[i].duration
+    return allTime
+
+
+# 下面的函数都是假定为正常路口
+# 当前相位可通过，获取可通过剩余时间，不包括当前相位剩余时间
+def getGreenRemainTime(nowPhaseName, tlsPhases):
+    loc = 0
+    for i in range(len(tlsPhases)):
+        if nowPhaseName == tlsPhases[i].name:
+            loc = i
+            break
+
+    loctmp = loc+1
+    if loctmp >= len(tlsPhases):
+        loctmp = 0
+
+    remainTime = 0
+    while 'y' in tlsPhases[loctmp].name:
+        remainTime += tlsPhases[loctmp].duration
+        loctmp += 1
+        if loctmp >= len(tlsPhases):
+            loctmp = 0
+    
+    return remainTime
+
+# 当前为相位禁行，获取下个可通过相位等待时间
+def getNxtGreenBgn(nowPhaseName, tlsPhases):
+    loc = 0
+    for i in range(len(tlsPhases)):
+        if nowPhaseName == tlsPhases[i].name:
+            loc = i
+            break
+
+    loc +=1
+    if loc >= len(tlsPhases):
+        loc = 0
+    
+    waitTime = 0
+    while not 'y' in tlsPhases[loc].name:
+        waitTime += tlsPhases[loc].duration
+        loc += 1
+        if loc >= len(tlsPhases):
+            loc = 0
+    return waitTime
+
+# 当前相位禁行，获取下个可通过相位结束时间
+def getNxtGreenEnd(nowPhaseName, tlsPhases):
+    waitTime1 = getNxtGreenBgn(nowPhseName=nowPhaseName, tlsPhases=tlsPhases)
+    
+    loc = 0
+    for i in range(len(tlsPhases)):
+        if nowPhaseName == tlsPhases[i].name:
+            loc = i
+            break
+
+    loc +=1
+    if loc >= len(tlsPhases):
+        loc = 0
+    while not 'y' in tlsPhases[loc].name:
+        loc += 1
+        if loc >= len(tlsPhases):
+            loc = 0
+    watiTime2 = 0
+    while 'y' in tlsPhases[loc].name:
+        watiTime2 += tlsPhases[loc].duration
+        loc += 1
+        if loc >= len(tlsPhases):
+            loc = 0
+    return waitTime1 + watiTime2
+
+# 当前相位可通行，获取下个相位开始时间
+def getSecGreenBgn(nowPhase, tlsPhases):
+    waitTime1 = getGreenRemainTime(nowPhase, tlsPhases)
+    
+    loc = 0
+    for i in range(len(tlsPhases)):
+        if tlsPhases[i].name == nowPhase:
+            loc = i
+            break
+    
+    while 'y' in tlsPhases[loc].name:
+        loc += 1
+        if loc >= len(tlsPhases):
+            loc = 0
+    if loc == 0:
+        loc = len(tlsPhases)
+    loc -= 1
+
+    waitTime2 = getNxtGreenBgn(tlsPhases[loc].name, tlsPhases=tlsPhases)
+    return waitTime1 + waitTime2
+
+# 当前相位可通行，获取下个相位结束时间
+def getSecGreenEnd(nowPhase, tlsPhases):
+    waitTime1 = getGreenRemainTime(nowPhase, tlsPhases)
+    
+    loc = 0
+    for i in range(len(tlsPhases)):
+        if tlsPhases[i].name == nowPhase:
+            loc = i
+            break
+    
+    while 'y' in tlsPhases[loc].name:
+        loc += 1
+        if loc >= len(tlsPhases):
+            loc = 0
+    if loc == 0:
+        loc = len(tlsPhases)
+    loc -= 1
+
+    waitTime2 = getNxtGreenEnd(tlsPhases[loc].name, tlsPhases=tlsPhases)
+    return waitTime1 + waitTime2
+
 def get_tls_info(veh_id):
     tls_info = traci.vehicle.getNextTLS(veh_id)
     # print('-------------------------------------------------------')
@@ -196,7 +384,66 @@ def glosa(veh_id, alpha=0.9):
         target_speed = max(alpha * max_speed, (2 - alpha) * min_speed)
 
         return target_speed
+
+def getGlosaSpeedNCC(veh_id, alpha=0.9):
+    if veh_id == 'l' or veh_id == 'f':
+        return None
+    tls_info = getNCCTlsInfo2(veh_id)
+    if tls_info != None:
+        tl_flag = tls_info[0]
+        tls_phase_dict = tls_info[4]
+        dist_to_tl = tls_info[3]
+        min_time = tls_info[1]
+        max_time = tls_info[2]
         
+        # 根据前车的情况实际调整速度
+        f, l = get_neighbor_cars(veh_id)
+        follower_id, leader_id = f[0], l[0]
+        follower_speed, leader_speed = f[2], l[2]
+        # print('--------------------------------------')
+        # if leader_id != 'l':
+        # # 只有前车和当前车在同一个十字路口上时，前车的速度会影响到当前车的通行时间
+        #     if traci.vehicle.getLaneID(veh_id) == traci.vehicle.getLaneID(leader_id):
+        #         # 得到前车到达十字路口的预计时间
+        #         tls_info_leader = get_tls_info(leader_id)
+        #         leader_dist_tl = tls_info_leader[2]
+        #         leader_tl_flag = tls_info_leader[0] 
+        #         if leader_tl_flag == 1:
+        #             if leader_speed > 0.5:
+        #                 leader_pass_time = leader_dist_tl / leader_speed
+        #                 # print('前车{}的预计通过时间{}'.format(leader_id, leader_pass_time))
+        #                 if leader_pass_time > max_time:
+        #                     # 当前车因为前车在当前绿灯周期通过，因此选择下一个绿灯周期通过
+        #                     min_time = max_time + tls_phase_dict['wey_nsr'] + tls_phase_dict['wer_nsg'] + tls_phase_dict['wer_nsy']
+        #                     max_time = max_time + tls_phase_dict['wey_nsr'] + tls_phase_dict['wer_nsg'] + tls_phase_dict['wer_nsy'] + tls_phase_dict['weg_nsr']
+        #                 else:
+        #                     if leader_pass_time > min_time:
+        #                         min_time = leader_pass_time
+        # if follower_id != 'f':     
+        #     if traci.vehicle.getLaneID(veh_id) == traci.vehicle.getLaneID(follower_id):
+        #         # 得到前车到达十字路口的预计时间
+        #         tls_info_follower = get_tls_info(follower_id)
+        #         follower_dist_tl = tls_info_follower[2]
+        #         follower_tl_flag = tls_info_follower[0] 
+        #         if follower_tl_flag == 1:
+        #             if follower_speed > 0.5:
+        #                 follower_pass_time = follower_dist_tl / follower_speed
+
+        #                 if follower_pass_time < max_time:
+        #                     if follower_pass_time > min_time:
+        #                         max_time = follower_pass_time
+        # print('--------------------------------------')                        
+        # print('最早通过的时间 {}, 最迟通过时间 {}'.format(min_time, max_time))   
+        # print('到十字路口的距离{}'.format(dist_to_tl))             
+        min_speed = dist_to_tl / max_time 
+        max_speed = dist_to_tl / min_time 
+        min_speed = np.clip(min_speed, 0., 20.)
+        max_speed = np.clip(max_speed, 0., 20.)    
+        
+        target_speed = max(alpha * max_speed, (2 - alpha) * min_speed)
+        
+    return target_speed, min_speed, max_speed
+
 def get_glosa_speed(veh_id, alpha=0.9):
     if veh_id == 'l' or veh_id == 'f':
         return None
@@ -295,6 +542,80 @@ def get_IDM_speed(veh_id, glosa_flag=True, speed_flag=True):
     if speed_flag:
         traci.vehicle.setSpeed(veh_id, next_speed)
     return next_a
+
+# 返回值有四个，分别是tlsFlag, 最早通过时间，最晚通过时间，距离路口长度，tlsPhasesDict
+# 如果是不正常路口，那就是[1,0.01,0x3f3f3f3f,distToIntersec,tlsPhasesDict]
+# 如果是正常路口，分两种情况：
+#   当前绿灯：
+#       现在可以通过则通过
+#       现在不可以通过则不通过
+#   当前不通过:
+
+def getNCCTlsInfo2(vehID):
+    tlsInfo = traci.vehicle.getNextTLS(vehID)
+    if len(tlsInfo) != 0:
+        tlsID = tlsInfo[0][0]
+        distTOIntersec = tlsInfo[0][2]
+        tlsPhaseName = traci.trafficlight.getPhaseName(tlsID)
+        currPhaseDuration = traci.trafficlight.getNextSwitch(tlsID)
+        tlsPhases = traci.trafficlight.getAllProgrameLogics(tlsID)[0].phases
+
+        tlsPhaseDict = defaultdict()
+        for i in range(len(tlsPhases)):
+            tlsPhaseDict[tlsPhases[i].name] = tlsPhases[i].duration
+            allPhaseDuration += tlsPhases[i].duration
+
+        normalFlag = isNormalTLS(tlsPhases=tlsPhases)
+        if not normalFlag: # 非正常路口
+            return [1, 0.01, 0x3f3f3f3f, distTOIntersec, tlsPhaseDict]
+        else: # 正常路口
+            if 'y' in tlsPhaseName: # 当前相位可通过
+                remainTime = getGreenRemainTime(nowPhaseName=tlsPhaseName, tlsPhases=tlsPhases)
+                if distTOIntersec / 20.0 <= 0.9 * remainTime:
+                    return [1, 0.01, 0.01 + remainTime + currPhaseDuration, distTOIntersec, tlsPhaseDict]
+                else:
+                    return [1, 
+                            getSecGreenBgn(tlsPhaseName, tlsPhases) + currPhaseDuration, 
+                            getSecGreenEnd(tlsPhaseName, tlsPhases) + currPhaseDuration,
+                            distTOIntersec, tlsPhaseDict]
+            else: # 当前相位不可通过
+                return [0,
+                        getNxtGreenBgn(tlsPhaseName, tlsPhases) + currPhaseDuration + 0.01,
+                        getNxtGreenEnd(tlsPhaseName, tlsPhases) + currPhaseDuration,
+                        distTOIntersec, tlsPhaseDict]
+
+        # if 'y' in tlsPhaseName:
+        #     tlsFlag = 1
+        #     timeToNxtGreenFinish = currPhaseDuration
+        # else:
+        #     tlsFlag = 0
+        #     timeToNxtGreenFinish = currPhaseDuration
+        #     loc = 0
+        #     while(loc < len(tlsPhases)):
+        #         if tlsPhases[loc].name != tlsPhaseName:
+        #             loc += 1
+        #         else:
+        #             break
+        #     # 一直加，加到接下来某一个相位名称中含有Y就可以了
+        #     while(True):
+        #         loc += 1
+        #         if(loc == len(tlsPhases)):
+        #             loc = 0
+        #         timeToNxtGreenFinish += tlsPhases[loc].duration
+        #         if('y' in tlsPhases[loc].name): # 可通行的红绿灯相位名称中都有Y
+        #             break
+
+        # # 返回值为[tlsFlag, minTime, maxTime, distToTL, tlsPhaseDict]
+        # # 其中minTime为
+        # if 'y' in tlsPhaseName: # 当前正好是绿灯
+        #     # 如果这个绿灯赶不上，那就下一个
+        #     if distTOIntersec / 20. <= 0.9 * timeToNxtGreenFinish: # 赶得上这一个
+        #         return [1, 0.01, timeToNxtGreenFinish + 0.01, distTOIntersec, tlsPhaseDict]
+        #     else:
+        #         return [1,
+        #                 timeToNxtGreenFinish + ]
+        # else: #当前不是绿灯
+        #     pass
 
 def get_tls_info2(veh_id):
     tls_info = traci.vehicle.getNextTLS(veh_id)

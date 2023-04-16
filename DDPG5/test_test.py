@@ -71,7 +71,7 @@ def test():
 
     for i_episode in range(cfg.eval_eps):
         sumocfgPth = os.path.join(currPath, cfg.sumocfgPth)
-        sumo_cmd = set_sumo(gui=True, sumocfg_file_name=sumocfgPth, max_steps=cfg.simulation_steps)
+        sumo_cmd = set_sumo(gui=False, sumocfg_file_name=sumocfgPth, max_steps=cfg.simulation_steps)
 
         agent.reset()
         traci.start(sumo_cmd)
@@ -87,7 +87,7 @@ def test():
         while traci.simulation.getMinExpectedNumber() > 0 and i_step <= 2 * cfg.simulation_steps:
             i_step += 1
             if traci.vehicle.getIDCount() > 0:
-                currState = agent.get_current_state()
+                currState = agent.getCurrentStateNCC()
                 action = agent.choose_action(currState, i_step, add_noise=True)
                 action = agent.step(currState, action)
 

@@ -67,6 +67,41 @@ class DDPGAgent:
         self.memory = ReplayBuffer(cfg.memory_capacity)
         self.cfg = cfg
 
+    def getCurrentStateNCC(self):
+        current_state_dict = defaultdict(list)
+        veh_list = traci.vehicle.getIDList()
+        for veh in veh_list:
+            tl_info2 = getNCCTlsInfo2(veh)
+            tl_info1 = getNCCTlsInfo2(veh)
+            if tl_info2:
+                f, l = get_neighbor_cars(veh)
+                l_id, l_pos, l_speed = l[0], l[1], l[2]
+                f_id, f_pos, f_speed = f[0], f[1], f[2]
+                c_pos = traci.vehicle.getLanePosition(veh)
+                dist_to_cl = l_pos - c_pos - 4.9
+                dist_to_cf = c_pos - f_pos - 4.9 
+                #############################################################
+                current_state_dict[veh].append(traci.vehicle.getSpeed(veh))             # 当前车的速度
+                current_state_dict[veh].append(l_speed)                                 # 前车的速度
+                current_state_dict[veh].append(f_speed)                                 # 后车的速度
+                ############################################################
+                current_state_dict[veh].append(dist_to_cl)                             # 当前车距离前车的距离
+                current_state_dict[veh].append(dist_to_cf)                             # 当前车和后车的距离
+                #############################################################  
+                tl_flag, tl_min, tl_max, tl_dist = tl_info2[0], tl_info2[1], tl_info2[2], tl_info2[3]
+                # current_state_dict[veh].append(tl_flag)
+                # current_state_dict[veh].append(tl_info1[1])
+                current_state_dict[veh].append(tl_dist)                                # 距离交叉路口的距离
+                current_state_dict[veh].append(tl_min)                                 # 通过交叉路口的最小时间
+                current_state_dict[veh].append(tl_max)                                 # 通过交叉路口的最大时间
+                #############################################################
+                target_speed, min_speed, max_speed = getGlosaSpeedNCC(veh, 0.9)
+                # current_state_dict[veh].append(target_speed)                           # 当前车建议通过交通路况的参考速度
+                # current_state_dict[veh].append(traci.vehicle.getAcceleration(veh))
+                current_state_dict[veh].append(min_speed)
+                current_state_dict[veh].append(max_speed)
+        return current_state_dict    
+
     def get_current_state(self):
         current_state_dict = defaultdict(list)
         veh_list = traci.vehicle.getIDList()
