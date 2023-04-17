@@ -251,7 +251,7 @@ def getNxtGreenBgn(nowPhaseName, tlsPhases):
 
 # 当前相位禁行，获取下个可通过相位结束时间
 def getNxtGreenEnd(nowPhaseName, tlsPhases):
-    waitTime1 = getNxtGreenBgn(nowPhseName=nowPhaseName, tlsPhases=tlsPhases)
+    waitTime1 = getNxtGreenBgn(nowPhaseName=nowPhaseName, tlsPhases=tlsPhases)
     
     loc = 0
     for i in range(len(tlsPhases)):
@@ -558,8 +558,9 @@ def getNCCTlsInfo2(vehID):
         distTOIntersec = tlsInfo[0][2]
         tlsPhaseName = traci.trafficlight.getPhaseName(tlsID)
         currPhaseDuration = traci.trafficlight.getNextSwitch(tlsID)
-        tlsPhases = traci.trafficlight.getAllProgrameLogics(tlsID)[0].phases
+        tlsPhases = traci.trafficlight.getAllProgramLogics(tlsID)[0].phases
 
+        allPhaseDuration = 0
         tlsPhaseDict = defaultdict()
         for i in range(len(tlsPhases)):
             tlsPhaseDict[tlsPhases[i].name] = tlsPhases[i].duration

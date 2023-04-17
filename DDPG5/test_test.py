@@ -71,7 +71,7 @@ def test():
 
     for i_episode in range(cfg.eval_eps):
         sumocfgPth = os.path.join(currPath, cfg.sumocfgPth)
-        sumo_cmd = set_sumo(gui=False, sumocfg_file_name=sumocfgPth, max_steps=cfg.simulation_steps)
+        sumo_cmd = set_sumo(gui=True, sumocfg_file_name=sumocfgPth, max_steps=cfg.simulation_steps)
 
         agent.reset()
         traci.start(sumo_cmd)

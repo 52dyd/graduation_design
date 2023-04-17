@@ -85,7 +85,7 @@ def train():
     tau_arr = [0.001, 0.005, 0.01, 0.05, 0.1]
     # dest_path = 'models/test4.pth'
     now = datetime.datetime.now()
-    dest_path = 'models/' + now.strftime("%Y%m%d-%H:%M:%S") + '.pth'
+    dest_path = 'models/longroad' + now.strftime("%Y%m%d-%H:%M:%S") + '.pth'
     
     # single1.pth
     # writer_path = 'tensorboard/7'
