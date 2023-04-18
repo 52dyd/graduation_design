@@ -48,7 +48,7 @@ class DDPGConfig:
         self.soft_tau = 0.005
         self.max_action = 2
 
-        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        self.device = torch.device("cpu")
 
         self.simulation_steps = 2000
         self.modelPth = 'models/cpu5.pth'
