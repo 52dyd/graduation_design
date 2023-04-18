@@ -1,2 +1,0 @@
-/home/yuwz/tmp/graduation_design/DDPG5/traffic.py:144: UserWarning: Call to deprecated function getCompleteRedYellowGreenDefinition, use getAllProgramLogics instead.
-  tls_phases = traci.trafficlight.getCompleteRedYellowGreenDefinition(tls_id)[0].phases
