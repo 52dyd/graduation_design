@@ -48,10 +48,11 @@ class DDPGConfig:
         self.soft_tau = 0.005
         self.max_action = 2
 
+        #self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.device = torch.device("cpu")
 
         self.simulation_steps = 2000
-        self.modelPth = 'models/cpu5.pth'
+        self.modelPth = 'models/longroad20230417-17:15:31.pth'
         self.sumocfgPth = 'test1/test.sumocfg'
 
 def test():
@@ -64,7 +65,7 @@ def test():
     print('-------\n', targetPath, '-------\n')
 
     agent = DDPGAgent(state_dim=10, action_dim=1, cfg=cfg)
-    agent.actor.load_state_dict(torch.load(targetPath))
+    agent.actor.load_state_dict(torch.load(targetPath, map_location=torch.device("cpu")))
     print('模型参数导入成功')
 
     # episode_avg_halt_list = []
