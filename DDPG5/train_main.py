@@ -108,7 +108,7 @@ def train():
         car_count_list = [100, 110, 120, 130, 140, 150]
         generate_rou_file(ep = i_episode + 1, car_count_per_lane=random.choice(car_count_list), path='rou_net2')    #######第二次是不需要更新的
         generate_cfg_file(ep = i_episode + 1, path='rou_net2')    #######
-        cfg_file_name = 'rou_net2/intersection' + str(i_episode + 1) + '.sumocfg'
+        cfg_file_name = 'rou_net2_double/intersection' + str(i_episode + 1) + '.sumocfg'
         cfg_file = os.path.join(curr_path, cfg_file_name)
         sumo_cmd = set_sumo(gui=False, sumocfg_file_name = cfg_file, max_steps=3600)
 

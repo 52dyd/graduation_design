@@ -125,8 +125,8 @@ def generate_rou_file(ep, simulation_steps = 3600, car_count_per_lane = 100, pat
             <param key="stoppingThreshold" value="0.1"/>
         </vType>
         
-        <route id="W2E" edges="WE0 WE1"/>
-        <route id="E2W" edges="EW0 EW1"/>""", file=route)
+        <route id="W2E" edges="WE0 WE1 WE2"/>
+        <route id="E2W" edges="EW0 EW1 EW2"/>""", file=route)
         depart_list = []
         for i in range(car_count_per_lane):
             #随机选择一个车辆行驶的方向，随机选择车辆的类型
