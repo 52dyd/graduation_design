@@ -16,8 +16,8 @@
             <param key="stoppingThreshold" value="0.1"/>
         </vType>
         
-        <route id="W2E" edges="WE0 WE1"/>
-        <route id="E2W" edges="EW0 EW1"/>
+        <route id="W2E" edges="WE0 WE1 WE2"/>
+        <route id="E2W" edges="EW0 EW1 EW2"/>
    <vehicle id="E2W_1" type="ego_car" route="E2W" depart="23" departSpeed="10" departLane="best"/>
    <vehicle id="W2E_2" type="ego_car" route="W2E" depart="49" departSpeed="10" departLane="best"/>
    <vehicle id="W2E_3" type="ego_car" route="W2E" depart="56" departSpeed="10" departLane="best"/>
