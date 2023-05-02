@@ -46,7 +46,7 @@ class DDPGConfig:
         
         self.epsilon_start = 3
 
-        self.max_speed = 20
+        self.max_speed = 28
 
         self.target_update = 4
         self.hidden_dim = 256
@@ -56,9 +56,10 @@ class DDPGConfig:
         self.device = torch.device("cuda:1" if torch.cuda.is_available() else "cpu")
         #self.device = torch.device("cpu")
 
-        self.simulation_steps = 3600
+        self.simulation_steps = 200
         
         self.pathToSumoFiles = "rou_net2_single"
+        self.dest_path = 'models/single' + datetime.datetime.now().strftime("%Y%m%d-%H:%M:%S") + '.pth.ignore'
 
     
 def train(gamma_idx, tau_idx):
@@ -106,9 +107,9 @@ def train(gamma_idx, tau_idx):
     episode_avg_halt_list = []
     for i_episode in range(cfg.train_eps):
         ########################################################################
-        car_count_list = [100, 110, 120, 130, 140, 150]
-        generate_rou_file_single(ep = i_episode + 1, car_count_per_lane=random.choice(car_count_list), path=cfg.pathToSumoFiles)    #######第二次是不需要更新的
-        generate_cfg_file(ep = i_episode + 1, path=cfg.pathToSumoFiles)    #######
+        # car_count_list = [100, 110, 120, 130, 140, 150]
+        # generate_rou_file_single(ep = i_episode + 1, car_count_per_lane=random.choice(car_count_list), path=cfg.pathToSumoFiles)    #######第二次是不需要更新的
+        # generate_cfg_file(ep = i_episode + 1, path=cfg.pathToSumoFiles)    #######
         cfg_file_name = cfg.pathToSumoFiles + '/intersection' + str(i_episode + 1) + '.sumocfg'
         cfg_file = os.path.join(curr_path, cfg_file_name)
         sumo_cmd = set_sumo(gui=False, sumocfg_file_name = cfg_file, max_steps=3600)
