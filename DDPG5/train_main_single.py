@@ -3,8 +3,13 @@ import traci
 import torch
 import random
 import datetime
+
+import multiprocessing
 import numpy as np
 from collections import defaultdict
+
+from queue import Queue
+from time import sleep
 
 from traffic import *
 
@@ -26,13 +31,14 @@ def init_rand_seed(seed_value):
     torch.cuda.manual_seed_all(seed_value)   # 为所有GPU设置随机种子（多块GPU）
     torch.backends.cudnn.deterministic = True
 
-
 class DDPGConfig:
-    def __init__(self):
+    def __init__(self, GPUID, gamma=0.99, tau=0.005):
         self.algo = 'MADDPG'
         self.env = 'SUMO' # env name
 
-        self.gamma = 0.99
+        self.seedVal = 20150427
+
+        self.gamma = gamma
         self.epsilon = 0.001
 
         self.critic_lr = 5e-3
@@ -50,19 +56,25 @@ class DDPGConfig:
 
         self.target_update = 4
         self.hidden_dim = 256
-        self.soft_tau = 0.005
+        self.soft_tau = tau
         self.max_action = 2
 
-        self.device = torch.device("cuda:1" if torch.cuda.is_available() else "cpu")
+        self.device = torch.device("cuda:" + GPUID if torch.cuda.is_available() else "cpu")
         #self.device = torch.device("cpu")
 
-        self.simulation_steps = 200
+        self.simulation_steps = 3600
         
         self.pathToSumoFiles = "rou_net2_single"
-        self.dest_path = 'models/single' + datetime.datetime.now().strftime("%Y%m%d-%H:%M:%S") + '.pth.ignore'
+        self.model_dest_path = "models/"
+        self.model_dest_path_leader = "single"
+        self.model_dest_path_follow = ""
+        self.procID = -1 # 多进程id
 
-    
-def train(gamma_idx, tau_idx):
+def printToFile(fileHandle, string):
+    fileHandle.write(string)
+    return
+
+def train(gamma_idx, tau_idx, procID, outputPath):
     rewards = []
     speed_reward = []
     tls_reward = []
@@ -71,36 +83,35 @@ def train(gamma_idx, tau_idx):
     ecs = []
     speeds = []
     jerks = []
-    cfg = DDPGConfig()
+    gamma_arr = [0.7, 0.8, 0.9, 0.99, 0.999]
+    tau_arr = [0.001, 0.005, 0.01, 0.05, 0.1]
+    cfg = DDPGConfig("%1d"%(procID%2), gamma=gamma_arr[gamma_idx], tau=tau_arr[tau_idx])
+    cfg.procID = procID
     
-    seedVal = 5
-    init_rand_seed(seedVal)
-    
+    init_rand_seed(cfg.seedVal)
+    outputFile = open(outputPath + 'gamma%5f_tua%5f.txt'%(cfg.gamma, cfg.soft_tau), "w")
     curr_path = os.path.dirname(os.path.abspath(__file__))
-    print('\n\n\n')
-    print(f'Env:{cfg.env}, Algorithm:{cfg.algo}, Device:{cfg.device}')
+    outputFile.write('\n'+f'Env:{cfg.env}, Algorithm:{cfg.algo}, Device:{cfg.device}')
     
     #############################3
     # torch.cuda.set_device(1)
     ##############################
     # 超参数 gamma soft_tau
-    gamma_arr = [0.7, 0.8, 0.9, 0.99, 0.999]
-    tau_arr = [0.001, 0.005, 0.01, 0.05, 0.1]
+
     # dest_path = 'models/test4.pth'
-    now = datetime.datetime.now()
-    dest_path = 'models/single' + now.strftime("%Y%m%d-%H:%M:%S") + '.pth'
-    
+
     # single1.pth
     # writer_path = 'tensorboard/7'
     # writer = SummaryWriter(writer_path)
-    print('-----------------------------------------')
-    print(dest_path)
-    print('seed {}'.format(seedVal))
 
-    print('当前的gamma是{}, 当前的soft tau是{}'.format(gamma_arr[gamma_idx], tau_arr[tau_idx]))
+    outputFile.write('\n'+'-----------------------------------------')
+    outputFile.write('\n'+str(vars(cfg)))
+    outputFile.write('\n'+'seed {}'.format(cfg.seedVal))
+
+    outputFile.write('\n'+'当前的gamma是{}, 当前的soft tau是{}'.format(gamma_arr[gamma_idx], tau_arr[tau_idx]))
     cfg.gamma = gamma_arr[gamma_idx]
     cfg.soft_tau = tau_arr[tau_idx]
-    print('-----------------------------------------')
+    outputFile.write('\n'+'-----------------------------------------')
     # train
     agent = DDPGAgent(state_dim=10, action_dim=1, cfg=cfg)
 
@@ -117,7 +128,7 @@ def train(gamma_idx, tau_idx):
         agent.reset() #重置噪声
         
         traci.start(sumo_cmd)
-        print('Simulation......')
+        # print('Simulation......')
         ep_reward = 0.
         ep_speed_reward = 0.
         ep_tls_reward = 0.
@@ -216,15 +227,15 @@ def train(gamma_idx, tau_idx):
         avg_pass_ec = np.mean(np_ec_list)
         # 需要将其转化为对应的百公里能耗
         hundred_ec = avg_pass_ec / 0.6 * 0.1
-        print('Episode:{}/{}, Reward:{}'.format(i_episode + 1, cfg.train_eps, np.sum(step_reward_list) / len(step_reward_list)))
-        print('Episode:{}/{}, speed Reward:{}'.format(i_episode + 1, cfg.train_eps, np.sum(step_speed_reward_list) / len(step_speed_reward_list)))
-        print('Episode:{}/{}, tls Reward:{}'.format(i_episode + 1, cfg.train_eps, np.sum(step_tl_reward_list) / len(step_tl_reward_list)))
-        print('Episode:{}/{}, target Reward:{}'.format(i_episode + 1, cfg.train_eps, np.sum(step_target_reward_list) / len(step_target_reward_list)))
-        print('Episode:{}/{}, safe Reward:{}'.format(i_episode + 1, cfg.train_eps, np.sum(step_safe_reward_list) / len(step_safe_reward_list)))
-        print('Episode:{}/{}, avg speed:{} m/s'.format(i_episode + 1, cfg.train_eps, np.mean(np_speed_list)))
-        print('Episode:{}/{}, hundred miles ec:{} kwh/100km'.format(i_episode + 1, cfg.train_eps, hundred_ec))
-        print('Episode:{}/{}, avg jerk:{} '.format(i_episode + 1, cfg.train_eps, np.mean(np_jerk_list)))
-        print('Episode:{}/{}, avg halt num:{}'.format(i_episode + 1, cfg.train_eps, np.sum(avg_halt_num_list) / len(avg_halt_num_list)))
+        # print('Episode:{}/{}, Reward:{}'.format(i_episode + 1, cfg.train_eps, np.sum(step_reward_list) / len(step_reward_list)))
+        # print('Episode:{}/{}, speed Reward:{}'.format(i_episode + 1, cfg.train_eps, np.sum(step_speed_reward_list) / len(step_speed_reward_list)))
+        # print('Episode:{}/{}, tls Reward:{}'.format(i_episode + 1, cfg.train_eps, np.sum(step_tl_reward_list) / len(step_tl_reward_list)))
+        # print('Episode:{}/{}, target Reward:{}'.format(i_episode + 1, cfg.train_eps, np.sum(step_target_reward_list) / len(step_target_reward_list)))
+        # print('Episode:{}/{}, safe Reward:{}'.format(i_episode + 1, cfg.train_eps, np.sum(step_safe_reward_list) / len(step_safe_reward_list)))
+        # print('Episode:{}/{}, avg speed:{} m/s'.format(i_episode + 1, cfg.train_eps, np.mean(np_speed_list)))
+        # print('Episode:{}/{}, hundred miles ec:{} kwh/100km'.format(i_episode + 1, cfg.train_eps, hundred_ec))
+        # print('Episode:{}/{}, avg jerk:{} '.format(i_episode + 1, cfg.train_eps, np.mean(np_jerk_list)))
+        # print('Episode:{}/{}, avg halt num:{}'.format(i_episode + 1, cfg.train_eps, np.sum(avg_halt_num_list) / len(avg_halt_num_list)))
         episode_avg_halt_list.append(np.sum(avg_halt_num_list) / len(avg_halt_num_list))
         rewards.append(np.sum(step_reward_list) / len(step_reward_list))
         speed_reward.append(np.sum(step_speed_reward_list) / len(step_speed_reward_list))
@@ -235,25 +246,47 @@ def train(gamma_idx, tau_idx):
         ecs.append(hundred_ec)
         jerks.append(np.mean(np_jerk_list))
         
-
+    now = datetime.datetime.now()
+    dest_path = cfg.model_dest_path + cfg.model_dest_path_leader + now.strftime("%Y%m%d_%H%M%S_") + ("gamma=%f_tau=%f.pth" % (gamma_arr[gamma_idx], tau_arr[tau_idx])) + cfg.model_dest_path_follow
+    
     actor_pth_file_path = os.path.join(curr_path, dest_path)  ##########这个无需注释
   
     torch.save(agent.actor.state_dict(), actor_pth_file_path)
 
-    print('model saved successfully!')
-    print('Complete training!')
-    print("final reward list:{}".format(rewards))
-    print("final halt list:{}".format(episode_avg_halt_list))
-    print('speed reward list:{}'.format(speed_reward))
-    print('tls reward list:{}'.format(tls_reward))
-    print('target reward list:{}'.format(target_reward))
-    print('safe reward list {}'.format(safe_reward))
-    print('speed list {}'.format(speeds))
-    print('ec list {}'.format(ecs))
-    print('jerk list {}'.format(jerks))
+    outputFile.write('\n'+'model saved successfully!')
+    outputFile.write('\n'+'Complete training!')
+    outputFile.write('\n'+"final reward list:{}".format(rewards))
+    outputFile.write('\n'+"final halt list:{}".format(episode_avg_halt_list))
+    outputFile.write('\n'+'speed reward list:{}'.format(speed_reward))
+    outputFile.write('\n'+'tls reward list:{}'.format(tls_reward))
+    outputFile.write('\n'+'target reward list:{}'.format(target_reward))
+    outputFile.write('\n'+'safe reward list {}'.format(safe_reward))
+    outputFile.write('\n'+'speed list {}'.format(speeds))
+    outputFile.write('\n'+'ec list {}'.format(ecs))
+    outputFile.write('\n'+'jerk list {}'.format(jerks))
+    outputFile.close()
+
+
 
 if __name__ == "__main__":
+    procs = []
+    checkPoolQueue = Queue()
+    now = datetime.datetime.now()
+    destDirPth = './singleOutput/' + now.strftime("%Y%m%d_%H%M%S/")
+    os.makedirs(destDirPth)
     for i in range(5):
         for j in range(5):
-            train(i, j)
+            procs.append(multiprocessing.Process(target=train, args=(i, j, (i * 5 + j), destDirPth, )))
     
+    for i in range(len(procs)):
+        procs[i].start()
+        checkPoolQueue.put(i)
+
+    procID = -1
+    while not checkPoolQueue.empty():
+        procID = checkPoolQueue.get()
+        if procs[procID].is_alive():
+            checkPoolQueue.put(procID)
+            sleep(10)
+        else:
+            print("process No.%d well down" % procID)
