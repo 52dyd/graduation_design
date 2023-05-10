@@ -84,7 +84,8 @@ def train(gamma_idx, tau_idx, procID, outputPath):
     jerks = []
     gamma_arr = [0.7, 0.8, 0.9, 0.99, 0.999]
     tau_arr = [0.001, 0.005, 0.01, 0.05, 0.1]
-    cfg = DDPGConfig("%1d"%(procID%2), gamma=gamma_arr[gamma_idx], tau=tau_arr[tau_idx])
+    # cfg = DDPGConfig("%1d"%(procID%2), gamma=gamma_arr[gamma_idx], tau=tau_arr[tau_idx])
+    cfg = DDPGConfig('1', gamma=gamma_arr[gamma_idx], tau=tau_arr[tau_idx])
     cfg.procID = procID
 
     init_rand_seed(cfg.seedVal)
@@ -118,7 +119,7 @@ def train(gamma_idx, tau_idx, procID, outputPath):
     for i_episode in range(cfg.train_eps):
         ########################################################################
         # car_count_list = [100, 110, 120, 130, 140, 150]
-        # generate_rou_file(ep = i_episode + 1, car_count_per_lane=random.choice(car_count_list), path=cfg.pathToSumoFiles, simulation_steps=cfg.simulation_steps)    #######第二次是不需要更新的
+        # generate_rou_file_double(ep = i_episode + 1, car_count_per_lane=random.choice(car_count_list), path=cfg.pathToSumoFiles, simulation_steps=cfg.simulation_steps)    #######第二次是不需要更新的
         # generate_cfg_file(ep = i_episode + 1, path=cfg.pathToSumoFiles)    #######
         cfg_file_name = cfg.pathToSumoFiles + '/intersection' + str(i_episode + 1) + '.sumocfg'
         cfg_file = os.path.join(curr_path, cfg_file_name)
@@ -267,17 +268,25 @@ def train(gamma_idx, tau_idx, procID, outputPath):
     outputFile.close()
 
 if __name__ == "__main__":
+    maxThread = 10
+
     procs = []
     checkPoolQueue = Queue()
+    checkPoolWait = Queue()
     now = datetime.datetime.now()
     destDirPth = './doubleOutput/' + now.strftime("%Y%m%d_%H%M%S/")
     os.makedirs(destDirPth)
     for i in range(5):
         for j in range(5):
             procs.append(multiprocessing.Process(target=train, args=(i, j, (i * 5 + j), destDirPth, )))
+    
     for i in range(len(procs)):
-        procs[i].start()
-        checkPoolQueue.put(i)
+        checkPoolWait.put(i)
+
+    for i in range(maxThread):
+        procID = checkPoolWait.get()
+        procs[procID].start()
+        checkPoolQueue.put(procID)
 
     procID = -1
     while not checkPoolQueue.empty():
@@ -285,6 +294,18 @@ if __name__ == "__main__":
         if procs[procID].is_alive():
             checkPoolQueue.put(procID)
             sleep(10)
+            for i in range(checkPoolWait.qsize()):
+                print("No.%d"%(checkPoolWait.queue[i]), end=' ')
+            if checkPoolWait.qsize() > 0:
+                print("processings are waiting")
+
+            for i in range(checkPoolQueue.qsize()):
+                print("No.%d"%(checkPoolQueue.queue[i]), end=' ')
+            if checkPoolQueue.qsize() > 0:
+                print("processings are running")
         else:
+            if not checkPoolWait.empty():
+                tmp = checkPoolWait.get()
+                procs[tmp].start()
+                checkPoolQueue.put(tmp)
             print("process No.%d well down" % procID)
-            print("%d procs left"%(25-len(checkPoolQueue)))
