@@ -76,8 +76,8 @@ def test():
     # episode_avg_halt_list = []
 
     for i_episode in range(cfg.eval_eps):
-        generateRouTestFileDoueble(ep = i_episode + 1, simulation_steps=2400, arr_time = 0, depart_speed = 10, car_count_per_lane=800, path='double_test')
-        generateCfgTestFileDouble(ep = i_episode + 1, path='double_test')    #######
+        generateRouTestFileDoueble(ep = i_episode + 1)
+        generateCfgTestFileDouble(ep = i_episode + 1)    #######
         sumocfgPth = os.path.join(currPath, cfg.sumocfgPth)
         sumo_cmd = set_sumo(gui=True, sumocfg_file_name=sumocfgPth, max_steps=cfg.simulation_steps)
 
