@@ -32,7 +32,7 @@ def init_rand_seed(seed_value):
     torch.backends.cudnn.deterministic = True
 
 class DDPGConfig:
-    def __init__(self, GPUID, gamma=0.99, tau=0.005):
+    def __init__(self, GPUID = '0', gamma=0.99, tau=0.005):
         self.algo = 'MADDPG'
         self.env = 'SUMO' # env name
 
@@ -65,14 +65,13 @@ class DDPGConfig:
         self.simulation_steps = 3600
         
         self.pathToSumoFiles = "rou_net2_single"
-        self.model_dest_path = "models/"
-        self.model_dest_path_leader = "single"
-        self.model_dest_path_follow = ""
-        self.procID = -1 # 多进程id
 
-def printToFile(fileHandle, string):
-    fileHandle.write(string)
-    return
+        self.model_dest_path = "models/"
+        self.model_dest_path_leader = "single_acce8_speed2_"
+        self.model_dest_path_follow = ""
+
+        self.logName = '_acce2_speed_8_gamma%5f_tua%5f.txt'%(self.gamma, self.soft_tau)
+        self.procID = -1 # 多进程id
 
 def train(gamma_idx, tau_idx, procID, outputPath):
     rewards = []
@@ -89,7 +88,7 @@ def train(gamma_idx, tau_idx, procID, outputPath):
     cfg.procID = procID
     
     init_rand_seed(cfg.seedVal)
-    outputFile = open(outputPath + 'gamma%5f_tua%5f.txt'%(cfg.gamma, cfg.soft_tau), "w")
+    outputFile = open(outputPath + cfg.logName, "w")
     curr_path = os.path.dirname(os.path.abspath(__file__))
     outputFile.write('\n'+f'Env:{cfg.env}, Algorithm:{cfg.algo}, Device:{cfg.device}')
     
@@ -127,8 +126,8 @@ def train(gamma_idx, tau_idx, procID, outputPath):
 
         agent.reset() #重置噪声
         
+        print('proc No.%d simulating......%d/%d\n'%(cfg.procID, i_episode+1, cfg.train_eps))
         traci.start(sumo_cmd)
-        # print('Simulation......')
         ep_reward = 0.
         ep_speed_reward = 0.
         ep_tls_reward = 0.
@@ -266,8 +265,6 @@ def train(gamma_idx, tau_idx, procID, outputPath):
     outputFile.write('\n'+'jerk list {}'.format(jerks))
     outputFile.close()
 
-
-
 if __name__ == "__main__":
     procs = []
     checkPoolQueue = Queue()
@@ -290,3 +287,4 @@ if __name__ == "__main__":
             sleep(10)
         else:
             print("process No.%d well down" % procID)
+            print("%d procs left"%(25-len(checkPoolQueue)))

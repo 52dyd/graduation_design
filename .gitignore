@@ -2,3 +2,15 @@
 __pycache__
 DDPG5/rou_net2/tripinfo.xml
 sumo/
+tmp/
+DDPG5/.vscode
+DDPG5/rou_net2_single/*.rou.xml
+DDPG5/rou_net2_single/*.sumocfg
+DDPG5/rou_net2_single/tripinfo.xml
+DDPG5/rou_net2_double/*.rou.xml
+DDPG5/rou_net2_double/*.sumocfg
+DDPG5/rou_net2_double/tripinfo.xml
+DDPG5/rou_net/tripinfo.xml
+DDPG5/rou_net/*.sumocfg
+DDPG5/rou_net/*.rou.xml
+screenlog.0

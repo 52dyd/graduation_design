@@ -1,0 +1,18 @@
+
+Env:SUMO, Algorithm:MADDPG, Device:cuda:1
+-----------------------------------------
+{'algo': 'MADDPG', 'env': 'SUMO', 'seedVal': 20150427, 'gamma': 0.999, 'epsilon': 0.001, 'critic_lr': 0.005, 'actor_lr': 0.0001, 'memory_capacity': 1000000, 'batch_size': 512, 'train_eps': 3, 'eval_eps': 10, 'epsilon_start': 3, 'max_speed': 28, 'target_update': 4, 'hidden_dim': 256, 'soft_tau': 0.05, 'max_action': 2, 'device': device(type='cuda', index=1), 'simulation_steps': 200, 'pathToSumoFiles': 'rou_net2_single', 'model_dest_path': 'models/', 'model_dest_path_leader': 'single', 'model_dest_path_follow': 'drop', 'procID': 23}
+seed 20150427
+当前的gamma是0.999, 当前的soft tau是0.05
+-----------------------------------------
+model saved successfully!
+Complete training!
+final reward list:[-0.9332166358771997, -0.9981312719733194, -0.9945904786895807]
+final halt list:[6.392572944297083, 1.9220055710306407, 1.906810035842294]
+speed reward list:[0.0, 0.0, 0.0]
+tls reward list:[-0.001612127044258852, -0.001296586515864411, -0.0008785546683042353]
+target reward list:[-0.9316045088329408, -0.9968346854574549, -0.9937119240212766]
+safe reward list [0.0, 0.0, 0.0]
+speed list [1.4035138869256114, 2.7012880418444274, 0.09505270554912049]
+ec list [23.045504564219513, 22.937240390459536, 20.615546415142454]
+jerk list [0.08869610877281428, 0.047773201585407245, 0.013310746812067065]

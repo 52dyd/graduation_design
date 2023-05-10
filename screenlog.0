@@ -1,79 +1,0 @@
-sc[1m[7m%[27m[1m[0m                                                                                                         k..uation_design\[0m[27m[24m[J(base) [01;32m➜  [36mgraduation_design[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hsscs  lls[?1l>[?2004l
-kls\agent.py   network.py   real_traffic.py  ss            traffic.py
-glosa.py   [0m[01;34m__pycache__[0m  [01;34mrou_net[0m          sumocfg.py    train_main.py
-memory.py  README.md    screenlog.0      test_main.py  [01;34muniform_rou_net[0m
-[1m[7m%[27m[1m[0m                                                                                                         k..uation_design\[0m[27m[24m[J(base) [01;32m➜  [36mgraduation_design[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hsscreen -h[?1l>[?2004l
-kscreen\Use: screen [-opts] [cmd [args]]
- or: screen -r [host.tty]
-
-Options:
--4            Resolve hostnames only to IPv4 addresses.
--6            Resolve hostnames only to IPv6 addresses.
--a            Force all capabilities into each window's termcap.
--A -[r|R]     Adapt all windows to the new display width & height.
--c file       Read configuration file instead of '.screenrc'.
--d (-r)       Detach the elsewhere running screen (and reattach here).
--dmS name     Start as daemon: Screen session in detached mode.
--D (-r)       Detach and logout remote (and reattach here).
--D -RR        Do whatever is needed to get a screen session.
--e xy         Change command characters.
--f            Flow control on, -fn = off, -fa = auto.
--h lines      Set the size of the scrollback history buffer.
--i            Interrupt output sooner when flow control is on.
--l            Login mode on (update /var/run/utmp), -ln = off.
--ls [match]   or
--list         Do nothing, just list our SockDir [on possible matches].
--L            Turn on output logging.
--Logfile file Set logfile name.
--m            ignore $STY variable, do create a new screen session.
--O            Choose optimal output rather than exact vt100 emulation.
--p window     Preselect the named window if it exists.
--q            Quiet startup. Exits with non-zero return code if unsuccessful.
--Q            Commands will send the response to the stdout of the querying process.
--r [session]  Reattach to a detached screen process.
--R            Reattach if possible, otherwise start a new session.
--s shell      Shell to execute rather than $SHELL.
--S sockname   Name this session <pid>.sockname instead of <pid>.<tty>.<host>.
--t title      Set title. (window's name).
--T term       Use term as $TERM for windows, rather than "screen".
--U            Tell screen to use UTF-8 encoding.
--v            Print "Screen version 4.08.00 (GNU) 05-Feb-20".
--wipe [match] Do nothing, just clean up SockDir [on possible matches].
--x            Attach to a not detached screen. (Multi display mode).
--X            Execute <cmd> as a screen command in the specified session.
-[1m[7m%[27m[1m[0m                                                                                                         k..uation_design\[0m[27m[24m[J(base) [01;31m➜  [36mgraduation_design[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hscreen -h ls[?1l>[?2004l
-kscreen\There are screens on:
-	911719.pts-94.pc10-ThinkStation-P920	(2023年04月04日 16时58分34秒)	(Attached)
-	617708.train	(2023年03月11日 10时19分07秒)	(Detached)
-	599212.test	(2023年03月08日 21时52分00秒)	(Detached)
-	595030.train	(2023年03月08日 19时26分21秒)	(Detached)
-4 Sockets in /run/screen/S-yuwz.
-[1m[7m%[27m[1m[0m                                                                                                         k..uation_design\[0m[27m[24m[J(base) [01;32m➜  [36mgraduation_design[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hsscreen 0r   -r train[?1l>[?2004l
-kscreen\There are several suitable screens on:
-	617708.train	(2023年03月11日 10时19分08秒)	(Detached)
-	595030.train	(2023年03月08日 19时26分22秒)	(Detached)
-Type "screen [-d] -r [pid.]tty.host" to resume one of them.
-[1m[7m%[27m[1m[0m                                                                                                         k..uation_design\[0m[27m[24m[J(base) [01;31m➜  [36mgraduation_design[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hsscreen -r train     6177[?1l>[?2004l
-kscreen\[!p[?3;4l[4l>[?1049h[22;0;0t[4l[?1h=[0m(B[1;26r[H[2J[H[2JWarning: Unused states in tlLogic 'J10', program '0' in phase 0 after tl-index 10
-Simulation......
-Episode:100/100, Reward:0.040314128459621616
-Episode:100/100, speed Reward:0.4693292165157818
-Episode:100/100, tls Reward:-0.4290150880561601
-Episode:100/100, avg speed:13.883641487747076 m/s
-Episode:100/100, hundred miles ec:16.858228816967195 kwh/100km
-Episode:100/100, avg jerk:0.6569964383138068
-Episode:100/100, avg halt num:0.7984684998259659
-Traceback (most recent call last):Tr
-File "train_main.py", line 215, in <module>[41D
-train()  
-File "train_main.py", line 205, in train[38D
-torch.save(agent.actor.state_dict(), actor_pth_file_path)  
-File "/home/yuwz/anaconda3/envs/sumo/lib/python3.8/site-packages/torch/serialization.py", line 377, in save
-with _open_file_like(f, 'wb') as opened_file:  
-File "/home/yuwz/anaconda3/envs/sumo/lib/python3.8/site-packages/torch/serialization.py", line 231, in _open_file_like[11D
-return _open_file(name_or_buffer, mode)  
-File "/home/yuwz/anaconda3/envs/sumo/lib/python3.8/site-packages/torch/serialization.py", line 212, in __init__[4D
-super(_open_file, self).__init__(open(name, mode))
-FileNotFoundError: [Errno 2] No such file or directory: '/home/yuwz/tmp/graduation_design/models/mofan2.pth'
-(sumo) [1m[31m➜  [36mgraduation_design[C[34mgit:([31mmain[34m) [33m✗[C[1m[7m%[27m[1m[0m                                                                                                                                                            k..uation_design\[0m[27m[24m[J(base) [01;32m➜  [36mgraduation_design[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004heexit[?1l>[?2004l
-kexit\[1m[7m%[27m[1m[0m                                                                                                                                                            k..uation_design\[0m[27m[24m[J(base) [01;32m➜  [36mgraduation_design[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004h
