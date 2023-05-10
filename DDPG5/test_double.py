@@ -77,8 +77,8 @@ def test():
 
     for i_episode in range(cfg.eval_eps):
         generateRouTestFileDoueble(ep = i_episode + 1)
-        generateCfgTestFileDouble(ep = i_episode + 1)    #######
-        sumocfgPth = os.path.join(currPath, cfg.sumocfgPth)
+        sumocfgPth = generateCfgTestFileDouble(ep = i_episode + 1)    #######
+        sumocfgPth = os.path.join(currPath, sumocfgPth)
         sumo_cmd = set_sumo(gui=True, sumocfg_file_name=sumocfgPth, max_steps=cfg.simulation_steps)
 
         agent.reset()
