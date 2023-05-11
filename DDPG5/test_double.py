@@ -15,7 +15,6 @@ from functools import partial
 from collections import defaultdict
 from torch.utils.tensorboard import SummaryWriter
 
-
 from agent import DDPGAgent
 
 def initRandSeed(seed_value):

@@ -29,8 +29,8 @@ def set_sumo(gui, sumocfg_file_name, max_steps):
 
 def generate_cfg_file(ep, path='test_rou_net'):
     curr_path = os.path.dirname(os.path.abspath(__file__))
-    cfg_file_name = path+'/intersection' + str(ep) + '.sumocfg'
-    rou_file_name = path+'/intersection' + str(ep) + '.rou.xml'
+    cfg_file_name = path+'/intersection%3d'%(ep) + '.sumocfg'
+    rou_file_name = path+'/intersection%3d'%(ep) + '.rou.xml'
     net_file_name = path+'/intersection1.net.xml'
     cfg_file = os.path.join(curr_path, cfg_file_name)
     rou_file = os.path.join(curr_path, rou_file_name)
@@ -304,7 +304,7 @@ def generate_rou_file_single(ep, simulation_steps = 3600, car_count_per_lane = 1
     car_gen_steps_ew = np.rint(car_gen_steps_ew) 
 
     curr_path = os.path.dirname(os.path.abspath(__file__))
-    rou_file_name = path+'/intersection' + str(ep) + '.rou.xml'
+    rou_file_name = path+'/intersection%3d'%(ep) + '.rou.xml'
     rou_cfg_file = os.path.join(curr_path, rou_file_name)
    
     with open(rou_cfg_file, "w") as route:
@@ -365,7 +365,7 @@ def generate_rou_file_double(ep, simulation_steps = 3600, car_count_per_lane = 1
     car_gen_steps_ew = np.rint(car_gen_steps_ew) 
 
     curr_path = os.path.dirname(os.path.abspath(__file__))
-    rou_file_name = path+'/intersection' + str(ep) + '.rou.xml'
+    rou_file_name = path+'/intersection%3d'%(ep) + '.rou.xml'
     rou_cfg_file = os.path.join(curr_path, rou_file_name)
    
     with open(rou_cfg_file, "w") as route:

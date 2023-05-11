@@ -1,0 +1,7 @@
+
+Env:SUMO, Algorithm:MADDPG, Device:cuda:1
+-----------------------------------------
+{'algo': 'MADDPG', 'env': 'SUMO', 'seedVal': 20150427, 'gamma': 0.7, 'epsilon': 0.001, 'critic_lr': 0.005, 'actor_lr': 0.0001, 'memory_capacity': 1000000, 'batch_size': 512, 'train_eps': 200, 'eval_eps': 10, 'epsilon_start': 3, 'max_speed': 28, 'target_update': 4, 'hidden_dim': 256, 'soft_tau': 0.05, 'max_action': 2, 'device': device(type='cuda', index=1), 'simulation_steps': 3600, 'pathToSumoFiles': 'rou_net2_single', 'model_dest_path': 'models/', 'model_dest_path_leader': 'ep200_', 'model_dest_path_follow': '', 'logName': 'ep200_gamma0.700000_tua0.050000.txt', 'procID': 3}
+seed 20150427
+当前的gamma是0.7, 当前的soft tau是0.05
+-----------------------------------------

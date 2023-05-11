@@ -47,7 +47,7 @@ class DDPGConfig:
         self.memory_capacity = 1000000
         self.batch_size = 512
 
-        self.train_eps = 40 # 原来是80
+        self.train_eps = 80 # 原来是80
         self.eval_eps = 10 # 原来是10
         
         self.epsilon_start = 3
@@ -85,7 +85,7 @@ def train(gamma_idx, tau_idx, procID, outputPath):
     gamma_arr = [0.7, 0.8, 0.9, 0.99, 0.999]
     tau_arr = [0.001, 0.005, 0.01, 0.05, 0.1]
     # cfg = DDPGConfig("%1d"%(procID%2), gamma=gamma_arr[gamma_idx], tau=tau_arr[tau_idx])
-    cfg = DDPGConfig('1', gamma=gamma_arr[gamma_idx], tau=tau_arr[tau_idx])
+    cfg = DDPGConfig('0', gamma=gamma_arr[gamma_idx], tau=tau_arr[tau_idx])
     cfg.procID = procID
 
     init_rand_seed(cfg.seedVal)
@@ -129,7 +129,6 @@ def train(gamma_idx, tau_idx, procID, outputPath):
         
         print('proc No.%d simulating......%d/%d\n'%(cfg.procID, i_episode+1, cfg.train_eps))
         traci.start(sumo_cmd)
-        # outputFile.write('Simulation......')
         ep_reward = 0.
         ep_speed_reward = 0.
         ep_tls_reward = 0.
@@ -268,7 +267,7 @@ def train(gamma_idx, tau_idx, procID, outputPath):
     outputFile.close()
 
 if __name__ == "__main__":
-    maxThread = 10
+    maxThread = 12
 
     procs = []
     checkPoolQueue = Queue()
@@ -283,7 +282,7 @@ if __name__ == "__main__":
     for i in range(len(procs)):
         checkPoolWait.put(i)
 
-    for i in range(maxThread):
+    for i in range(max(maxThread, checkPoolQueue.qsize())):
         procID = checkPoolWait.get()
         procs[procID].start()
         checkPoolQueue.put(procID)

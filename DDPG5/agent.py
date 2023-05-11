@@ -238,8 +238,8 @@ class DDPGAgent:
                 reward_accel = -0.01 * (accel * accel)
 
             reward_speed *= 0
-            reward_accel *= 0.8
-            reward_target *= 0.2
+            reward_accel *= 1
+            reward_target *= 1
             reward_safe *= 0
 
             total_reward = reward_speed + reward_accel + reward_target + reward_safe
