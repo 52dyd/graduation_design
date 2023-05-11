@@ -465,7 +465,7 @@ def generateCfgTestFileDouble(ep, path='double_test'):
     curr_path = os.path.dirname(os.path.abspath(__file__))
     cfg_file_name = path+'/intersection' + str(ep) + '.sumocfg'
     rou_file_name = path+'/intersection' + str(ep) + '.rou.xml'
-    net_file_name = path+'/ .net.xml'
+    net_file_name = path+'/intersection.net.xml'
     cfg_file = os.path.join(curr_path, cfg_file_name)
     rou_file = os.path.join(curr_path, rou_file_name)
     net_file = os.path.join(curr_path, net_file_name)
@@ -570,3 +570,4 @@ def generateCfgTestFileSingle(ep, path='single_test'):
     </time>
     <tripinfo-output value="tripinfo.xml"/>
 </configuration>""".format(net_file, rou_file), file=route)
+    return cfg_file_name

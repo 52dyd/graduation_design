@@ -7,9 +7,9 @@ import numpy as np
 from traffic import *
 from sumocfg import set_sumo
 from sumocfg import generate_test_cfg_file
-from sumocfg import generateCfgTestFileDouble
+from sumocfg import generateCfgTestFileSingle
 from sumocfg import generate_normal_rou_file
-from sumocfg import generateRouTestFileDoueble
+from sumocfg import generateRouTestFileSingle
 import json
 from functools import partial
 from collections import defaultdict
@@ -55,9 +55,8 @@ class DDPGConfig:
 
         #self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.device = torch.device("cpu")
-
         self.simulation_steps = 2000
-        self.modelPth = 'models/double20230507_061154_gamma=0.999000_tau=0.010000.pth'
+        self.modelPth = 'models/single20230507_061421_gamma=0.999000_tau=0.050000.pth'
         self.sumocfgPth = 'test1/test.sumocfg'
 
 def test():
@@ -76,8 +75,8 @@ def test():
     # episode_avg_halt_list = []
 
     for i_episode in range(cfg.eval_eps):
-        generateRouTestFileDoueble(ep = i_episode + 1)
-        sumocfgPth = generateCfgTestFileDouble(ep = i_episode + 1)    #######
+        generateRouTestFileSingle(ep = i_episode + 1)
+        sumocfgPth = generateCfgTestFileSingle(ep = i_episode + 1)    #######
         sumocfgPth = os.path.join(currPath, sumocfgPth)
         sumo_cmd = set_sumo(gui=True, sumocfg_file_name=sumocfgPth, max_steps=cfg.simulation_steps)
 
