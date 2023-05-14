@@ -400,7 +400,7 @@ def generate_rou_file_double(ep, simulation_steps = 3600, car_count_per_lane = 1
             print('   <vehicle id="%s_%i" type="ego_car" route="%s" depart="%i" departSpeed="10" departLane="best"/>' % (depart_list[i][0], i + 1, depart_list[i][0], depart_list[i][1]), file = route)             
         print('</routes>', file=route)
 
-def generateRouTestFileDoueble(ep, simulation_steps = 3600, car_count_per_lane = 100, path='double_test'):
+def generateRouTestFileDoueble(ep, simulation_steps = 3600, car_count_per_lane = 500, path='double_test'):
     #在4000s内随机生成400辆车
     random.seed(42)  #设置随机数种子，能够让结果重现
     timings_we = np.random.weibull(2, car_count_per_lane)
@@ -455,9 +455,9 @@ def generateRouTestFileDoueble(ep, simulation_steps = 3600, car_count_per_lane =
         for i in range(car_count_per_lane):
             #随机选择一个车辆行驶的方向，随机选择车辆的类型
             depart_list.append(['W2E', car_gen_steps_we[i]])
-            depart_list.append(['E2W', car_gen_steps_ew[i]])
+            # depart_list.append(['E2W', car_gen_steps_ew[i]])
         depart_list = sorted(depart_list, key = lambda x:x[1])
-        for i in range(car_count_per_lane * 2):
+        for i in range(car_count_per_lane):
             print('   <vehicle id="%s_%i" type="ego_car" route="%s" depart="%i" departSpeed="10" departLane="best"/>' % (depart_list[i][0], i + 1, depart_list[i][0], depart_list[i][1]), file = route)             
         print('</routes>', file=route)
 
