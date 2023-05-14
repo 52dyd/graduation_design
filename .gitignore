@@ -15,4 +15,6 @@ DDPG5/rou_net/*.sumocfg
 DDPG5/rou_net/*.rou.xml
 screenlog.0
 mock/single_test/tripinfo.xml
+mock/double_test/tripinfo.xm
+mock/models
 mock/double_test/tripinfo.xml

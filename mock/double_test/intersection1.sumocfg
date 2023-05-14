@@ -1,7 +1,7 @@
 <configuration>
     <input>
-        <net-file value="/home/yuwz/graduation_design/DDPG5/double_test/intersection.net.xml"/>
-        <route-files value="/home/yuwz/graduation_design/DDPG5/double_test/intersection1.rou.xml"/>
+        <net-file value="/home/yuwz/graduation_design/mock/double_test/intersection.net.xml"/>
+        <route-files value="/home/yuwz/graduation_design/mock/double_test/intersection1.rou.xml"/>
     </input>
     <time>
         <begin value="0"/>
