@@ -74,10 +74,10 @@ def test():
 
     # episode_avg_halt_list = []
     for i_episode in range(cfg.eval_eps):
-        generateRouTestFileDoueble(ep = i_episode + 1, car_count_per_lane = 500)
+        # generateRouTestFileDoueble(ep = i_episode + 1, car_count_per_lane = 230, simulation_steps=3000)
         sumocfgPth = generateCfgTestFileDouble(ep = i_episode + 1)    #######
         sumocfgPth = os.path.join(currPath, sumocfgPth)
-        sumo_cmd = set_sumo(gui=True, sumocfg_file_name=sumocfgPth, max_steps=cfg.simulation_steps)
+        sumo_cmd = set_sumo(gui=False, sumocfg_file_name=sumocfgPth, max_steps=cfg.simulation_steps)
 
         # agent.reset()
         traci.start(sumo_cmd)
@@ -93,24 +93,26 @@ def test():
         info_dict = defaultdict(partial(defaultdict, list))
         while traci.simulation.getMinExpectedNumber() > 0 and i_step <= 2 * cfg.simulation_steps:
             i_step += 1
+            print(i_step)
             if traci.vehicle.getIDCount() > 0:
-
+                for vehID in traci.vehicle.getIDList(): 
     # 0当前速度 1前车速 2后车速 3前车距 4后车距 5TLS距离 6最大时间 7最小时间 8最小速 9最大速
 # 前后没有车时，车距为最远通讯距离250-车长4.9=245.1，车速就是自己
-                currState = get_current_state()
-                for vehID in traci.vehicle.getIDList(): 
+                    # currState = get_current_state()
+                    # if not vehID in currState:  # 前方没有路口
+                    #     traci.vehicle.setSpeed(vehID, cfg.max_speed) 
+                    # elif len(currState[vehID]) == 0:        # 前方没有路口
+                    #     traci.vehicle.setSpeed(vehID, cfg.max_speed) 
+                    # else:   # 前方有路口
+                    #     traci.vehicle.setSpeed(vehID, currState[vehID][9])
+                    
                     info_dict[vehID]['dist'].append(traci.vehicle.getDistance(vehID))
                     info_dict[vehID]['ST'].append((i_step, info_dict[vehID]['dist'][-1]))
-                    if not vehID in currState:  # 前方没有路口
-                        traci.vehicle.setSpeed(vehID, cfg.max_speed) 
-                    elif len(currState[vehID]) == 0:        # 前方没有路口
-                        traci.vehicle.setSpeed(vehID, cfg.max_speed) 
-                    else:   # 前方有路口
-                        traci.vehicle.setSpeed(vehID, currState[vehID][9])
             traci.simulationStep()
-        jsonString = json.dumps(info_dict)
-        with open("doubleMock.txt", "w") as f:
-            f.write(jsonString)
+            if i_step == 2000:
+                jsonString = json.dumps(info_dict)
+                with open("doubleMock.txt", "w") as f:
+                    f.write(jsonString)
 
 if __name__ == "__main__":
     test()

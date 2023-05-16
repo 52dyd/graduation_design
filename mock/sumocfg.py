@@ -519,7 +519,7 @@ def generateRouTestFileSingle(ep, simulation_steps = 3600, car_count_per_lane = 
         #EV的能耗是Wh每秒 carFollowModel="IDM"
         print("""<routes>
 
-        <vType id = 'ego_car' vclass="evehicle" emissionClass="Energy/unknown" tau="1" accel="3.0" decel="3.0" color="#00FFFF" sigma="0.2" length="4.90" minGap="1" maxSpeed="20" guiShape="passenger">
+        <vType id = 'ego_car' vclass="evehicle" emissionClass="Energy/unknown" tau="1" accel="1.5" decel="3.0" color="#00FFFF" sigma="0.2" length="4.90" minGap="1" maxSpeed="20" guiShape="passenger">
             <param key="has.battery.device" value="true"/>
             <param key="maximumBatteryCapacity" value="38000"/> 
             <param key="maximumPower" value="200000"/>
