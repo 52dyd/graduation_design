@@ -243,7 +243,7 @@ def getGreenRemainTime(nowPhaseName, tlsPhases):
 
     return remainTime
 
-# 当前为相位禁行，获取下个可通过相位等待时间
+# 当前为相位禁行，获取下个绿灯等待时间
 
 
 def getNxtGreenBgn(nowPhaseName, tlsPhases):
@@ -597,8 +597,8 @@ def getNCCTlsInfo2(vehID):
     if len(tlsInfo) != 0:
         tlsID = tlsInfo[0][0]
         distTOIntersec = tlsInfo[0][2]
-        tlsPhaseName = traci.trafficlight.getPhaseName(tlsID)
-        currPhaseDuration = traci.trafficlight.getNextSwitch(tlsID)
+        currPhaseName = traci.trafficlight.getPhaseName(tlsID)
+        currPhaseDuration = traci.trafficlight.getNextSwitch(tlsID) - traci.simulation.getTime()
         tlsPhases = traci.trafficlight.getAllProgramLogics(tlsID)[0].phases
 
         allPhaseDuration = 0
@@ -611,23 +611,23 @@ def getNCCTlsInfo2(vehID):
         if not normalFlag:  # 非正常路口
             return [1, 0.01, 0x3f3f3f3f, distTOIntersec, tlsPhaseDict]
         else:  # 正常路口
-            if 'y' in tlsPhaseName:  # 当前相位可通过
-                remainTime = getGreenRemainTime(
-                    nowPhaseName=tlsPhaseName, tlsPhases=tlsPhases)
-                if distTOIntersec / 20.0 <= 0.9 * remainTime:
+            if 'y' in currPhaseName:  # 当前相位可通过
+                remainTime = currPhaseDuration + getGreenRemainTime(
+                    nowPhaseName=currPhaseName, tlsPhases=tlsPhases)
+                if distTOIntersec / 20.0 <= 0.9 * remainTime: # 赶得上这个绿灯
                     return [1, 0.01, 0.01 + remainTime + currPhaseDuration, distTOIntersec, tlsPhaseDict]
-                else:
+                else:  # 赶不上了
                     return [1,
                             getSecGreenBgn(
-                                tlsPhaseName, tlsPhases) + currPhaseDuration,
+                                currPhaseName, tlsPhases) + currPhaseDuration,
                             getSecGreenEnd(
-                                tlsPhaseName, tlsPhases) + currPhaseDuration,
+                                currPhaseName, tlsPhases) + currPhaseDuration,
                             distTOIntersec, tlsPhaseDict]
             else:  # 当前相位不可通过
                 return [0,
-                        getNxtGreenBgn(tlsPhaseName, tlsPhases) +
+                        getNxtGreenBgn(currPhaseName, tlsPhases) +
                         currPhaseDuration + 0.01,
-                        getNxtGreenEnd(tlsPhaseName, tlsPhases) +
+                        getNxtGreenEnd(currPhaseName, tlsPhases) +
                         currPhaseDuration,
                         distTOIntersec, tlsPhaseDict]
 

@@ -1,0 +1,3 @@
+Episode:1/1, avg speed:15.379941329541447 m/s
+Episode:1/1, hundred miles ec:685.1390000000001 kwh/100km
+Episode:1/1, avg jerk:0.9616995330154393 

@@ -52,7 +52,7 @@ class DDPGConfig:
         self.device = torch.device("cpu")
 
         self.simulation_steps = 2000
-        self.modelPth = 'models/longroad20230417-17:15:31.pth'
+        self.modelPth = 'models/nnew13.pth'
         self.sumocfgPth = 'test1/test.sumocfg'
 
 def test():
